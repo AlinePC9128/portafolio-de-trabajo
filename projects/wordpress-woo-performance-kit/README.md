@@ -1,5 +1,7 @@
 # WordPress + WooCommerce Performance Kit
 
+Hub central: [Aline Labs](https://github.com/AlinePC9128/portafolio-de-trabajo/tree/main/labs) · [demo](./demo/)
+
 Plugin demostrativo para presentar experiencia con WordPress, PHP, REST endpoints, SEO, WooCommerce y buenas prácticas de mantenimiento.
 
 ## Incluye
