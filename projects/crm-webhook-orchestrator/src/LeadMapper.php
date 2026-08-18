@@ -3,16 +3,25 @@ declare(strict_types=1);
 
 final class LeadMapper
 {
+    private function value(array $payload, string $key): mixed
+    {
+        if (array_key_exists($key, $payload)) return $payload[$key];
+        foreach (($payload['field_data'] ?? []) as $field) {
+            if (($field['name'] ?? '') === $key) return $field['values'][0] ?? null;
+        }
+        return null;
+    }
+
     public function normalize(array $payload): array
     {
         return [
-            'name' => trim((string)($payload['full_name'] ?? $payload['name'] ?? '')),
-            'email' => strtolower(trim((string)($payload['email'] ?? ''))),
-            'phone' => preg_replace('/[^0-9+]/', '', (string)($payload['phone'] ?? '')),
-            'city' => trim((string)($payload['city'] ?? '')),
-            'service' => trim((string)($payload['service'] ?? '')),
-            'source' => trim((string)($payload['source'] ?? 'webhook')),
-            'consent' => (bool)($payload['consent'] ?? false),
+            'name' => trim((string)($this->value($payload, 'full_name') ?: $this->value($payload, 'name') ?: '')),
+            'email' => strtolower(trim((string)($this->value($payload, 'email') ?? ''))),
+            'phone' => preg_replace('/[^0-9+]/', '', (string)($this->value($payload, 'phone') ?? '')),
+            'city' => trim((string)($this->value($payload, 'city') ?? '')),
+            'service' => trim((string)($this->value($payload, 'service') ?? '')),
+            'source' => trim((string)($this->value($payload, 'source') ?? ($payload['ad_id'] ?? 'webhook'))),
+            'consent' => (bool)($payload['consent'] ?? true),
             'received_at' => gmdate('c'),
         ];
     }
