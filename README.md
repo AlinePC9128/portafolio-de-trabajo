@@ -14,6 +14,10 @@ Portafolio demostrativo de Aline Peña, Ingeniera en Sistemas y WordPress Develo
 
 La página `cv.html` contiene una versión breve del perfil profesional, preparada para abrirse en el navegador y guardarse como PDF.
 
+## Laboratorio de proyectos
+
+La ruta `labs/index.html` enlaza seis casos demostrativos independientes: Angular/TypeScript, API Node, CRM/webhooks, WordPress/WooCommerce, UX/UI y marketing digital. La matriz técnica y la estrategia para separar cada caso en su propio repositorio están en `REPOSITORY_PLAN.md`.
+
 ## Estructura
 
 ```text
