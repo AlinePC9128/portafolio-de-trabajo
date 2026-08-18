@@ -1,378 +1,195 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio profesional de Aline Peña Colunga: Ingeniería en Sistemas, WordPress, marketing digital, CRM, UX/UI y análisis de datos.">
-  <meta name="theme-color" content="#0c1222">
-  <title>Aline Peña Colunga | Portafolio profesional</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio de Aline Peña: WordPress, UX/UI, frontend, APIs, automatización y marketing digital." />
+    <meta name="theme-color" content="#08111f" />
+    <title>Aline Peña — WordPress, UX/UI & Web Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
+    <header class="site-header" id="inicio">
+      <nav class="nav container" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Aline Peña, inicio">
+          <span class="brand-mark">AP</span>
+          <span class="brand-name">Aline Peña<span class="brand-dot">.</span></span>
+        </a>
 
-<body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
 
-  <header class="site-header" id="inicio">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark" aria-hidden="true">AP</span>
-        <span>Aline Peña</span>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-        <span class="sr-only">Abrir menú</span>
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#habilidades">Habilidades</a>
-        <a class="nav-cta" href="#contacto">Contacto</a>
+        <div class="nav-menu" id="primary-menu">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#ux-lab">UX Lab</a>
+          <a href="#api-lab">API Lab</a>
+          <a href="#habilidades">Habilidades</a>
+          <a class="nav-cta" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+          <button class="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
+        </div>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="contenido">
-    <section class="hero section">
-      <div class="container hero-grid">
+    <main>
+      <section class="hero container" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Ingeniería + marketing + soluciones digitales</p>
-          <h1>Transformo necesidades de negocio en <span>experiencias digitales claras y funcionales.</span></h1>
-          <p class="hero-text">
-            Soy Aline Peña Colunga, Ingeniera en Sistemas con experiencia en WordPress,
-            marketing digital, CRM, UX/UI, documentación de procesos y análisis de datos.
-          </p>
-
+          <p class="eyebrow"><span class="eyebrow-line"></span> Portfolio técnico · Veracruz, México</p>
+          <h1 id="hero-title">Diseño experiencias digitales y las convierto en <span>productos funcionales.</span></h1>
+          <p class="hero-lead">Soy Ingeniera en Sistemas y WordPress Developer. Combino UX/UI, desarrollo frontend, integraciones y marketing para construir sitios que se entienden, funcionan y generan oportunidades.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#proyectos">Ver proyectos</a>
-            <a class="button button-secondary" href="cv.html">Ver CV</a>
+            <a class="button button-primary" href="#proyectos">Explorar proyectos <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="cv.html">Descargar CV <span aria-hidden="true">↗</span></a>
           </div>
-
-          <ul class="hero-points" aria-label="Resumen profesional">
-            <li>Disponible para trabajo remoto</li>
-            <li>Veracruz, México</li>
-            <li>Comunicación en español</li>
-          </ul>
+          <div class="availability"><span class="status-dot"></span> Disponible para oportunidades remotas en México / LATAM</div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Resumen visual de especialidades">
-          <div class="orbit-card card-main">
-            <span class="profile-initials">AP</span>
-            <strong>Aline Peña Colunga</strong>
-            <small>Perfil multidisciplinario</small>
-          </div>
-          <div class="orbit-card card-one">WordPress</div>
-          <div class="orbit-card card-two">Marketing</div>
-          <div class="orbit-card card-three">CRM</div>
-          <div class="orbit-card card-four">UX/UI</div>
-          <div class="orbit-ring ring-one"></div>
-          <div class="orbit-ring ring-two"></div>
-        </div>
-      </div>
-    </section>
+        <div class="hero-visual reveal reveal-delay" aria-label="Resumen técnico interactivo">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="code-card">
+            <div class="code-topbar"><span></span><span></span><span></span><small>aline-portfolio.js</small></div>
+            <pre><code><i>const</i> profile = {
+  name: <b>"Aline Peña"</b>,
+  focus: [<b>"UX/UI"</b>, <b>"WordPress"</b>],
+  api: <b>true</b>,
+  status: <b>"building"</b>
+};
 
-    <section class="section section-soft" id="sobre-mi">
-      <div class="container split-layout">
+<em>// turn ideas into useful interfaces</em></code></pre>
+            <div class="code-footer"><span class="mini-pulse"></span> open to collaboration</div>
+          </div>
+          <div class="floating-card floating-card-top"><span class="floating-icon">✦</span><span><strong>5 años</strong><small>con WordPress</small></span></div>
+          <div class="floating-card floating-card-bottom"><span class="floating-icon blue">⌁</span><span><strong>API ready</strong><small>REST · Webhooks · JSON</small></span></div>
+        </div>
+      </section>
+
+      <section class="signal-bar" aria-label="Áreas principales">
+        <div class="container signal-grid">
+          <span>WordPress <b>·</b> WooCommerce</span>
+          <span>UX/UI <b>·</b> Figma</span>
+          <span>APIs <b>·</b> Webhooks</span>
+          <span>SEO <b>·</b> Analytics</span>
+        </div>
+      </section>
+
+      <section class="section container" id="proyectos" aria-labelledby="projects-title">
         <div class="section-heading reveal">
-          <p class="eyebrow">Sobre mí</p>
-          <h2>Un perfil que conecta tecnología, diseño y negocio.</h2>
-        </div>
-
-        <div class="about-copy reveal">
-          <p>
-            Cuento con experiencia en desarrollo y administración de sitios web, planificación
-            de campañas digitales, seguimiento comercial mediante CRM, creación de materiales
-            visuales y documentación funcional.
-          </p>
-          <p>
-            Mi fortaleza está en comprender una necesidad, organizar la información y convertirla
-            en una solución práctica. Puedo colaborar con áreas técnicas, comerciales y creativas,
-            manteniendo una comunicación clara y orientada a resultados.
-          </p>
-
-          <div class="about-stats">
-            <article>
-              <strong>WordPress</strong>
-              <span>Administración, contenido y optimización</span>
-            </article>
-            <article>
-              <strong>CRM</strong>
-              <span>Seguimiento comercial y organización de procesos</span>
-            </article>
-            <article>
-              <strong>Marketing</strong>
-              <span>Contenido, campañas y análisis de métricas</span>
-            </article>
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Selección de trabajo</p>
+            <h2 id="projects-title">Proyectos que hablan por mí<span class="accent">.</span></h2>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experiencia">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Experiencia profesional</p>
-          <h2>Participación transversal en proyectos digitales.</h2>
-          <p>
-            Experiencia en empresas donde combiné funciones de sistemas, marketing,
-            soporte, procesos y atención a usuarios.
-          </p>
+          <p class="section-intro">Casos reales, proyectos demostrativos y sistemas que conectan diseño, código y objetivos de negocio.</p>
         </div>
 
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <p class="role-label">Ingeniería en Sistemas · Marketing Digital</p>
-                  <h3>Intersyst Seguridad y Control</h3>
-                </div>
-                <span>2022–2026</span>
-              </div>
-              <ul class="check-list">
-                <li>Administración y mejora de sitios web desarrollados con WordPress.</li>
-                <li>Creación de landing pages, contenidos digitales y materiales comerciales.</li>
-                <li>Planeación y apoyo en campañas de Meta Ads, Google Ads y email marketing.</li>
-                <li>Seguimiento de prospectos y oportunidades mediante CRM.</li>
-                <li>Documentación de procesos, manuales, indicadores y actividades de ISO 9001.</li>
-                <li>Comunicación entre necesidades comerciales y soluciones tecnológicas.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <p class="role-label">Programación · Soporte · Marketing Digital</p>
-                  <h3>DBC Empresarial</h3>
-                </div>
-                <span>2021–2022</span>
-              </div>
-              <ul class="check-list">
-                <li>Apoyo en desarrollo, pruebas y mantenimiento de soluciones internas.</li>
-                <li>Participación en módulos de compras y herramientas CRM.</li>
-                <li>Capacitación, soporte a usuarios y elaboración de documentación.</li>
-                <li>Creación de contenidos para comunicación y marketing digital.</li>
-                <li>Colaboración en procesos y actividades relacionadas con ISO 9001.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="proyectos">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Proyectos destacados</p>
-          <h2>Casos que muestran cómo trabajo.</h2>
-          <p>
-            Los proyectos se presentan de forma general para proteger información
-            confidencial de las empresas y clientes involucrados.
-          </p>
+        <div class="filter-row" role="group" aria-label="Filtrar proyectos">
+          <button class="filter-button active" type="button" data-filter="all">Todos</button>
+          <button class="filter-button" type="button" data-filter="ux">UX/UI</button>
+          <button class="filter-button" type="button" data-filter="frontend">Frontend</button>
+          <button class="filter-button" type="button" data-filter="backend">APIs & backend</button>
+          <button class="filter-button" type="button" data-filter="marketing">Marketing</button>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card project-featured reveal">
-            <div class="project-visual visual-web">
-              <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
-              <div class="mock-sidebar"></div>
-              <div class="mock-content">
-                <span></span><span></span><span></span>
+        <div class="project-grid">
+          <article class="project-card project-card-featured reveal" data-category="backend frontend" data-project="api">
+            <div class="project-visual api-visual">
+              <div class="visual-label">LIVE DEMO <span class="live-dot"></span></div>
+              <div class="api-window">
+                <div class="api-window-head"><span>GET</span><small>/users</small><b>200 OK</b></div>
+                <div class="api-lines"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="api-json">{ <span>"data"</span>: [ ... ] }</div>
               </div>
             </div>
             <div class="project-content">
-              <p class="project-number">01</p>
-              <h3>Administración y optimización de sitios WordPress</h3>
-              <p>
-                Actualización de contenido, construcción de páginas, mejora de estructura,
-                rendimiento y experiencia de navegación en sitios corporativos.
-              </p>
-              <div class="tags">
-                <span>WordPress</span><span>Elementor</span><span>SEO</span><span>UX/UI</span>
-              </div>
+              <div class="project-meta"><span>01 / API LAB</span><span class="project-type">Frontend + REST</span></div>
+              <h3>API Lead Monitor</h3>
+              <p>Dashboard demostrativo que consume una API, maneja estados de carga y error, filtra resultados y transforma JSON en una interfaz clara.</p>
+              <div class="tag-row"><span>JavaScript</span><span>Fetch</span><span>JSON</span><span>UX de datos</span></div>
+              <button class="text-link project-open" type="button" data-project="api">Ver caso <span aria-hidden="true">↗</span></button>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-icon" aria-hidden="true">CRM</div>
-            <p class="project-number">02</p>
-            <h3>Seguimiento comercial mediante CRM</h3>
-            <p>
-              Organización de prospectos, notas, oportunidades, actividades y reportes para
-              mejorar la continuidad del proceso de ventas.
-            </p>
-            <div class="tags">
-              <span>CRM</span><span>Procesos</span><span>Ventas</span>
+          <article class="project-card reveal" data-category="backend" data-project="crm">
+            <div class="project-visual crm-visual">
+              <div class="crm-node node-ads">Meta Ads</div><div class="crm-arrow">→</div><div class="crm-node node-zapier">Zapier</div><div class="crm-arrow">→</div><div class="crm-node node-crm">CRM</div>
+              <div class="crm-status"><span class="live-dot"></span> webhook connected</div>
             </div>
+            <div class="project-content"><div class="project-meta"><span>02 / INTEGRATION</span><span class="project-type">Backend</span></div><h3>Clientes_SAE + Webhooks</h3><p>Flujo de leads desde campañas hacia CRM: mapeo de datos, validación, automatización y trazabilidad comercial.</p><div class="tag-row"><span>PHP</span><span>MySQL</span><span>HTTP / POST</span></div><button class="text-link project-open" type="button" data-project="crm">Ver caso <span aria-hidden="true">↗</span></button></div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-icon" aria-hidden="true">MKT</div>
-            <p class="project-number">03</p>
-            <h3>Estrategia y contenido de marketing digital</h3>
-            <p>
-              Creación de campañas, piezas gráficas, videos, landing pages y comunicación
-              para diferentes etapas del recorrido del cliente.
-            </p>
-            <div class="tags">
-              <span>Meta Ads</span><span>Google Ads</span><span>Contenido</span>
+          <article class="project-card reveal" data-category="ux frontend" data-project="autosise">
+            <div class="project-visual autosise-visual"><div class="browser-top"><span></span><span></span><span></span><small>autosise / showroom</small></div><div class="browser-body"><div class="browser-nav">AUTOSISE <span>Catálogo&nbsp;&nbsp; Servicios&nbsp;&nbsp; Contacto</span></div><div class="browser-hero"><small>Automatización con</small><strong>INGENIO<br />mexicano</strong><button>Conoce más</button></div><div class="browser-cards"><i></i><i></i><i></i></div></div></div>
+            <div class="project-content"><div class="project-meta"><span>03 / SHOWROOM</span><span class="project-type">UX + WooCommerce</span></div><h3>AUTOSISE Showroom</h3><p>Arquitectura de información, catálogo de productos y experiencia mobile-first para soluciones de automatización y seguridad.</p><div class="tag-row"><span>WordPress</span><span>WooCommerce</span><span>Responsive</span></div><button class="text-link project-open" type="button" data-project="autosise">Ver caso <span aria-hidden="true">↗</span></button></div>
+          </article>
+
+          <article class="project-card reveal" data-category="ux marketing" data-project="intersyst">
+            <div class="project-visual intersyst-visual"><div class="security-grid"></div><div class="security-copy"><span>INTEGRATED</span><strong>SECURITY</strong><small>Central 24/7 · Video · Alarmas</small></div><div class="security-ring">◎</div></div>
+            <div class="project-content"><div class="project-meta"><span>04 / WEBSITE</span><span class="project-type">WordPress + SEO</span></div><h3>Intersyst Seguridad</h3><p>Diseño, desarrollo, mantenimiento y contenido digital para una empresa de seguridad integrada con cobertura regional.</p><div class="tag-row"><span>Elementor</span><span>SEO</span><span>CF7 + CRM</span></div><button class="text-link project-open" type="button" data-project="intersyst">Ver caso <span aria-hidden="true">↗</span></button></div>
+          </article>
+
+          <article class="project-card reveal" data-category="ux frontend" data-project="uxflow">
+            <div class="project-visual ux-visual"><div class="ux-phone"><div class="ux-phone-top"></div><div class="ux-avatar"></div><i></i><i></i><i></i><button>Solicitar diagnóstico</button></div><div class="ux-sticky sticky-one">User flow</div><div class="ux-sticky sticky-two">Mobile-first</div></div>
+            <div class="project-content"><div class="project-meta"><span>05 / UX CASE</span><span class="project-type">Research → UI</span></div><h3>Lead Flow UX</h3><p>Ejemplo de proceso UX: descubrir fricciones, organizar contenido, prototipar y validar una conversión más simple.</p><div class="tag-row"><span>Figma</span><span>Wireframes</span><span>Usability</span></div><button class="text-link project-open" type="button" data-project="uxflow">Ver caso <span aria-hidden="true">↗</span></button></div>
+          </article>
+
+          <article class="project-card reveal" data-category="marketing frontend" data-project="marketing">
+            <div class="project-visual marketing-visual"><div class="metric-row"><span>Leads</span><strong>+28.4%</strong></div><div class="chart-bars"><i style="height:35%"></i><i style="height:52%"></i><i style="height:45%"></i><i style="height:72%"></i><i style="height:66%"></i><i style="height:92%"></i><i style="height:78%"></i></div><div class="chart-labels"><small>Meta</small><small>Google</small><small>SEO</small></div></div>
+            <div class="project-content"><div class="project-meta"><span>06 / CAMPAIGNS</span><span class="project-type">Data + Content</span></div><h3>Marketing Cockpit</h3><p>Panel visual para explicar campañas, adquisición y oportunidades con datos de GA4, Ads, Search Console y CRM.</p><div class="tag-row"><span>GA4</span><span>Tag Manager</span><span>Power BI</span></div><button class="text-link project-open" type="button" data-project="marketing">Ver caso <span aria-hidden="true">↗</span></button></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="dark-section" id="ux-lab" aria-labelledby="ux-title">
+        <div class="container ux-layout">
+          <div class="ux-intro reveal"><p class="eyebrow light"><span class="eyebrow-line"></span> UX process lab</p><h2 id="ux-title">No diseño pantallas.<br /><span>Diseño decisiones.</span></h2><p>Este recorrido muestra cómo convierto una necesidad de negocio en una experiencia que una persona puede entender y completar sin fricción.</p><div class="ux-principles"><span>01 claridad</span><span>02 contexto</span><span>03 conversión</span></div></div>
+          <div class="ux-workbench reveal reveal-delay">
+            <div class="ux-steps" role="tablist" aria-label="Etapas del proceso UX">
+              <button class="ux-step active" type="button" role="tab" aria-selected="true" data-ux-step="research"><b>01</b><span>Descubrir</span></button>
+              <button class="ux-step" type="button" role="tab" aria-selected="false" data-ux-step="structure"><b>02</b><span>Organizar</span></button>
+              <button class="ux-step" type="button" role="tab" aria-selected="false" data-ux-step="prototype"><b>03</b><span>Prototipar</span></button>
+              <button class="ux-step" type="button" role="tab" aria-selected="false" data-ux-step="validate"><b>04</b><span>Validar</span></button>
             </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-icon" aria-hidden="true">DATA</div>
-            <p class="project-number">04</p>
-            <h3>Reportes e indicadores para toma de decisiones</h3>
-            <p>
-              Organización de datos, seguimiento de métricas comerciales y creación de
-              reportes visuales para facilitar el análisis de resultados.
-            </p>
-            <div class="tags">
-              <span>Excel</span><span>Power BI</span><span>Métricas</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-icon" aria-hidden="true">ISO</div>
-            <p class="project-number">05</p>
-            <h3>Documentación y mejora de procesos</h3>
-            <p>
-              Elaboración de manuales, minutas, requerimientos, procedimientos y materiales
-              de capacitación bajo un enfoque de calidad.
-            </p>
-            <div class="tags">
-              <span>ISO 9001</span><span>Documentación</span><span>Capacitación</span>
-            </div>
-          </article>
+            <div class="ux-detail" id="ux-detail" role="tabpanel" aria-live="polite"><span class="detail-kicker">FASE 01 / DESCUBRIR</span><h3>Entender antes de construir</h3><p>Identifico objetivos, usuarios, contenido disponible y puntos de fricción. El resultado es una definición clara del problema.</p><div class="ux-artifact"><span class="artifact-dot"></span><span class="artifact-dot"></span><span class="artifact-dot"></span><div class="artifact-lines"><i></i><i></i><i></i></div><strong>brief → insight → opportunity</strong></div></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="habilidades">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Herramientas y habilidades</p>
-          <h2>Conocimientos aplicados a proyectos reales.</h2>
+      <section class="section container api-section" id="api-lab" aria-labelledby="api-title">
+        <div class="section-heading reveal"><div><p class="eyebrow"><span class="eyebrow-line"></span> Demo funcional</p><h2 id="api-title">API Lab<span class="accent">.</span></h2></div><p class="section-intro">Una pequeña prueba técnica en vivo: consumir datos, mostrar estados, filtrar registros y cuidar la experiencia de quien usa la interfaz.</p></div>
+        <div class="api-lab-card reveal">
+          <div class="api-lab-header"><div><span class="method-badge">GET</span><code>jsonplaceholder.typicode.com/users</code></div><div class="api-status" id="api-status"><span class="status-dot"></span> Lista para consultar</div></div>
+          <div class="api-controls"><label class="sr-only" for="api-search">Buscar usuario</label><input id="api-search" type="search" placeholder="Filtrar resultados…" /><button class="button button-primary small" id="load-api" type="button">Consultar API <span aria-hidden="true">↗</span></button></div>
+          <div class="api-results" id="api-results"><div class="empty-state"><span>⌁</span><strong>La demo está lista</strong><p>Presiona “Consultar API” para cargar datos reales desde un endpoint público.</p></div></div>
+          <div class="api-footer"><span>fetch()</span><span>JSON</span><span>loading / error states</span><span>search filter</span></div>
         </div>
+      </section>
 
-        <div class="skills-grid">
-          <article class="skill-card reveal">
-            <h3>Desarrollo web</h3>
-            <ul>
-              <li>WordPress</li>
-              <li>Elementor y WPBakery</li>
-              <li>HTML y CSS</li>
-              <li>Landing pages</li>
-              <li>Optimización web</li>
-            </ul>
-          </article>
+      <section class="systems-section" aria-labelledby="systems-title">
+        <div class="container"><div class="systems-heading reveal"><p class="eyebrow"><span class="eyebrow-line"></span> Pensamiento de sistemas</p><h2 id="systems-title">Cuando las herramientas<br /><span>necesitan hablar.</span></h2><p>Mi trabajo también conecta campañas, formularios, CRM y equipos comerciales para que la información llegue al lugar correcto.</p></div><div class="flow-diagram reveal reveal-delay" aria-label="Flujo de automatización de leads"><div class="flow-node"><span class="flow-icon pink">◉</span><strong>Campañas</strong><small>Meta · Google</small></div><div class="flow-connector"><span></span></div><div class="flow-node"><span class="flow-icon orange">ϟ</span><strong>Automatización</strong><small>Zapier · Webhooks</small></div><div class="flow-connector"><span></span></div><div class="flow-node featured"><span class="flow-icon blue">▦</span><strong>CRM</strong><small>Clientes_SAE · Perfex</small></div><div class="flow-connector"><span></span></div><div class="flow-node"><span class="flow-icon green">✉</span><strong>Seguimiento</strong><small>Email · WhatsApp</small></div></div></div>
+      </section>
 
-          <article class="skill-card reveal">
-            <h3>Marketing digital</h3>
-            <ul>
-              <li>Meta Ads y Google Ads</li>
-              <li>Email marketing</li>
-              <li>SEO y contenido</li>
-              <li>Embudo de conversión</li>
-              <li>Análisis de métricas</li>
-            </ul>
-          </article>
-
-          <article class="skill-card reveal">
-            <h3>Diseño y contenido</h3>
-            <ul>
-              <li>Photoshop</li>
-              <li>Canva</li>
-              <li>Filmora</li>
-              <li>Presentaciones comerciales</li>
-              <li>Contenido visual y audiovisual</li>
-            </ul>
-          </article>
-
-          <article class="skill-card reveal">
-            <h3>Negocio y datos</h3>
-            <ul>
-              <li>CRM y seguimiento de clientes</li>
-              <li>Excel avanzado</li>
-              <li>Power BI</li>
-              <li>Documentación funcional</li>
-              <li>Procesos ISO 9001</li>
-            </ul>
-          </article>
+      <section class="section container skills-section" id="habilidades" aria-labelledby="skills-title">
+        <div class="section-heading reveal"><div><p class="eyebrow"><span class="eyebrow-line"></span> Stack & enfoque</p><h2 id="skills-title">Lo que puedo aportar<span class="accent">.</span></h2></div><p class="section-intro">Una lectura honesta: experiencia que ya aplico y tecnologías que estoy fortaleciendo para seguir creciendo.</p></div>
+        <div class="skills-columns reveal">
+          <div class="skill-column"><div class="skill-column-title"><span class="skill-icon solid">✓</span><h3>Experiencia comprobada</h3></div><div class="skill-list"><div><strong>WordPress & Web</strong><span>PHP · HTML5 · CSS3 · JavaScript · jQuery · Elementor · WPBakery · WooCommerce</span></div><div><strong>UX/UI</strong><span>Arquitectura de información · user flows · wireframes · prototipos · responsive · Figma</span></div><div><strong>Integraciones</strong><span>MySQL · HTTP/POST · webhooks · Zapier · Perfex CRM · formularios · chatbots</span></div><div><strong>Marketing & medición</strong><span>SEO · GA4 · Tag Manager · Search Console · Meta/Google/TikTok Ads · Mailchimp</span></div></div></div>
+          <div class="skill-column learning"><div class="skill-column-title"><span class="skill-icon outline">↗</span><h3>En desarrollo continuo</h3></div><div class="skill-list"><div><strong>Gutenberg & FSE</strong><span>Bloques, patrones y temas modernos para WordPress</span></div><div><strong>React & REST API</strong><span>Componentes, consumo de endpoints y estados de interfaz</span></div><div><strong>WP-CLI</strong><span>Flujos de mantenimiento y productividad para WordPress</span></div><div><strong>CI/CD</strong><span>GitHub Actions y despliegues reproducibles</span></div></div></div>
         </div>
+      </section>
 
-        <div class="soft-skills reveal">
-          <span>Comunicación efectiva</span>
-          <span>Organización</span>
-          <span>Aprendizaje continuo</span>
-          <span>Trabajo colaborativo</span>
-          <span>Orientación a resultados</span>
-          <span>Resolución de problemas</span>
-        </div>
-      </div>
-    </section>
+      <section class="contact-section" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact-layout"><div class="contact-copy reveal"><p class="eyebrow light"><span class="eyebrow-line"></span> Siguiente proyecto</p><h2 id="contact-title">¿Construimos algo<br /><span>útil y memorable?</span></h2><p>Estoy disponible para proyectos web, WordPress, UX/UI, soporte técnico e integraciones. También estoy abierta a oportunidades remotas en México y LATAM.</p><div class="contact-links"><a href="https://github.com/AlinePC9128/portafolio-de-trabajo" target="_blank" rel="noopener noreferrer">Ver repositorio en GitHub <span>↗</span></a><span>Veracruz · México</span></div></div><form class="contact-form reveal reveal-delay" id="contact-form"><div class="form-row"><label>Tu nombre<input type="text" name="name" placeholder="¿Cómo te llamas?" required /></label><label>Tu correo<input type="email" name="email" placeholder="nombre@empresa.com" required /></label></div><label>¿En qué puedo ayudarte?<textarea name="message" rows="4" placeholder="Cuéntame brevemente sobre tu proyecto…" required></textarea></label><button class="button button-primary" type="submit">Enviar mensaje <span aria-hidden="true">↗</span></button><p class="form-feedback" id="form-feedback" role="status"></p></form></div>
+      </section>
+    </main>
 
-    <section class="section section-soft" id="formacion">
-      <div class="container split-layout">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Formación</p>
-          <h2>Ingeniería en Sistemas Computacionales.</h2>
-        </div>
-        <div class="education-card reveal">
-          <h3>Formación académica y actualización continua</h3>
-          <p>
-            Formación en análisis de sistemas, desarrollo de software, bases de datos,
-            tecnologías de la información y gestión de proyectos.
-          </p>
-          <p>
-            Complemento mi perfil con aprendizaje continuo en marketing digital,
-            WordPress, CRM, UX/UI, automatización, inteligencia artificial y procesos
-            de calidad bajo ISO 9001.
-          </p>
-        </div>
-      </div>
-    </section>
+    <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#inicio"><span class="brand-mark">AP</span><span class="brand-name">Aline Peña<span class="brand-dot">.</span></span></a><p>WordPress · UX/UI · Web · APIs · Marketing</p><span>© <span id="year"></span> Aline Peña</span></div></footer>
 
-    <section class="section contact-section" id="contacto">
-      <div class="container contact-card reveal">
-        <div>
-          <p class="eyebrow">Contacto</p>
-          <h2>¿Tienes una oportunidad o proyecto?</h2>
-          <p>
-            Estoy interesada en oportunidades remotas en español relacionadas con
-            sistemas, WordPress, marketing digital, CRM, UX/UI, soporte o análisis funcional.
-          </p>
-        </div>
+    <dialog class="project-modal" id="project-modal" aria-labelledby="modal-title"><div class="modal-inner"><button class="modal-close" id="modal-close" type="button" aria-label="Cerrar">×</button><span class="detail-kicker" id="modal-kicker">CASO DE ESTUDIO</span><h2 id="modal-title">Título del proyecto</h2><p id="modal-description"></p><div class="modal-grid"><div><span class="modal-label">Mi aporte</span><ul id="modal-contribution"></ul></div><div><span class="modal-label">Tecnologías</span><div class="tag-row" id="modal-tags"></div></div></div><div class="modal-note" id="modal-note"></div></div></dialog>
 
-        <div class="contact-actions">
-          <a class="button button-primary" href="https://github.com/AlinePC9128" target="_blank" rel="noopener noreferrer">
-            Ver GitHub
-          </a>
-          <a class="button button-secondary" href="cv.html">Consultar CV</a>
-        </div>
-
-        <p class="contact-note">
-          Agrega tu correo y LinkedIn antes de compartir el portafolio con reclutadores.
-          Las instrucciones están incluidas en el archivo README.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© <span id="current-year"></span> Aline Peña Colunga</p>
-      <p>Diseñado como muestra de experiencia digital.</p>
-    </div>
-  </footer>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
