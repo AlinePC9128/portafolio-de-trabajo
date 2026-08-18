@@ -6,9 +6,15 @@ CREATE TABLE IF NOT EXISTS tbl_leads (
   city VARCHAR(100) NULL,
   service VARCHAR(120) NULL,
   source VARCHAR(80) NOT NULL,
+  idempotency_key VARCHAR(120) NULL,
+  payload_json JSON NULL,
+  attempts TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  last_error VARCHAR(255) NULL,
   consent TINYINT(1) NOT NULL DEFAULT 0,
   status ENUM('new','qualified','contacted','won','lost') NOT NULL DEFAULT 'new',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX idx_leads_email (email),
-  INDEX idx_leads_status (status)
+  INDEX idx_leads_status (status),
+  UNIQUE KEY uq_leads_idempotency (idempotency_key)
 );
