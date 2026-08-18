@@ -31,3 +31,18 @@ npm test
 ```
 
 La preview estática en `demo/` permite mostrar el flujo de API en GitHub Pages sin levantar Node.
+
+## Escenarios incluidos
+
+- `201 Created`: alta válida con `requestId` e idempotency key.
+- `422 Unprocessable Entity`: errores por campo para recuperación del frontend.
+- `409 Conflict`: replay de una petición duplicada.
+- `GET /api/leads?page=1&limit=20`: paginación y filtro de estado.
+- `/health`, `/docs` y `/openapi.json`: operación y contrato visible.
+
+## Variantes de implementación
+
+- Repositorio en memoria para desarrollo rápido.
+- Schema Zod como límite de entrada.
+- Contrato OpenAPI separado en `src/openapi.ts`.
+- Demo estática para explicar la API sin servidor.
