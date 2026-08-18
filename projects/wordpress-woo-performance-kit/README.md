@@ -17,3 +17,11 @@ Plugin demostrativo para presentar experiencia con WordPress, PHP, REST endpoint
 Copiar `aline-portfolio-tools` en `wp-content/plugins/`, activar el plugin y consultar `/wp-json/aline/v1/health`.
 
 Este código es un ejemplo demostrativo; debe revisarse y adaptarse antes de usarlo en producción.
+
+## Escenarios incluidos
+
+- Preview con tabs de overview, SEO, WooCommerce y operación.
+- Catálogo con estados de disponibilidad y CTA por producto.
+- Endpoint `/wp-json/aline/v1/health` y diagnóstico `/wp-json/aline/v1/diagnostics`.
+- Shortcode `[aline_portfolio_status]` para mostrar estado del plugin.
+- Separación de módulos para REST, SEO, WooCommerce y telemetría.
