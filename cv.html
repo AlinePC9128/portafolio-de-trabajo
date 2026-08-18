@@ -1,145 +1,70 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Currículum profesional de Aline Peña Colunga.">
-  <title>CV | Aline Peña Colunga</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CV de Aline Peña: WordPress, UX/UI, frontend, APIs, CRM y marketing digital." />
+    <title>CV — Aline Peña</title>
+    <style>
+      :root { --ink:#0a1728; --muted:#637086; --line:#dce4ee; --blue:#2f80ed; --cyan:#55d6d2; --navy:#08111f; --bg:#f4f7fb; }
+      * { box-sizing:border-box; }
+      body { margin:0; color:var(--ink); background:var(--bg); font-family:Arial, sans-serif; line-height:1.55; }
+      .toolbar { position:sticky; top:0; z-index:2; display:flex; justify-content:space-between; gap:12px; padding:14px max(18px, calc((100% - 900px)/2)); border-bottom:1px solid var(--line); background:rgba(244,247,251,.92); backdrop-filter:blur(12px); }
+      .toolbar a,.toolbar button { padding:9px 14px; border:1px solid var(--line); border-radius:999px; color:var(--ink); background:#fff; font-weight:700; text-decoration:none; cursor:pointer; }
+      .toolbar button { color:#fff; border-color:var(--navy); background:var(--navy); }
+      .page { width:min(900px, calc(100% - 30px)); margin:30px auto; padding:clamp(28px, 6vw, 66px); background:#fff; box-shadow:0 22px 70px rgba(21,45,78,.12); }
+      header { padding-bottom:28px; border-bottom:4px solid var(--cyan); }
+      .eyebrow { margin:0 0 10px; color:var(--blue); font:700 11px/1.2 monospace; letter-spacing:.12em; text-transform:uppercase; }
+      h1,h2,h3 { margin-top:0; letter-spacing:-.04em; line-height:1.15; }
+      h1 { margin-bottom:7px; font-size:clamp(38px,7vw,62px); }
+      h2 { margin-bottom:15px; font-size:23px; }
+      h3 { margin-bottom:4px; font-size:17px; }
+      .title { margin:0; color:var(--blue); font-weight:700; }
+      .meta { display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:17px; color:var(--muted); font-size:13px; }
+      section { padding:27px 0; border-bottom:1px solid var(--line); }
+      section:last-child { border:0; }
+      section > p { color:var(--muted); }
+      .job + .job { margin-top:25px; padding-top:25px; border-top:1px solid var(--line); }
+      .job-head { display:flex; justify-content:space-between; gap:18px; }
+      .job-head p { margin:0; color:var(--blue); font-size:13px; font-weight:700; }
+      .job-head span { color:var(--muted); font-size:13px; white-space:nowrap; }
+      ul { color:var(--muted); }
+      .grid { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+      .chips { display:flex; flex-wrap:wrap; gap:7px; padding:0; list-style:none; }
+      .chips li { padding:6px 9px; border:1px solid var(--line); border-radius:6px; color:var(--muted); font:11px monospace; }
+      .honest { padding:16px; border-left:3px solid var(--cyan); color:var(--muted); background:#eefaf9; font-size:13px; }
+      @media (max-width:600px) { .toolbar { padding-inline:15px; }.toolbar a,.toolbar button { font-size:11px; }.job-head { display:block; }.job-head span { display:inline-block; margin-top:5px; }.grid { grid-template-columns:1fr; } }
+      @media print { .toolbar { display:none; } body { background:#fff; }.page { width:100%; margin:0; padding:0; box-shadow:none; } section { break-inside:avoid; } }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar"><a href="index.html">← Volver al portafolio</a><button type="button" onclick="window.print()">Guardar como PDF</button></div>
+    <main class="page">
+      <header>
+        <p class="eyebrow">Currículum profesional</p>
+        <h1>Aline Peña</h1>
+        <p class="title">WordPress Developer · Web Developer · UX/UI · Marketing Digital</p>
+        <div class="meta"><span>Ingeniera en Sistemas Computacionales</span><span>Veracruz, México</span><span>Remoto México / LATAM</span><span>GitHub: AlinePC9128</span></div>
+      </header>
 
-<body class="cv-body">
-  <div class="cv-toolbar">
-    <div class="container cv-toolbar-inner">
-      <a class="button button-secondary" href="index.html">← Volver al portafolio</a>
-      <button class="button button-primary" type="button" data-print-cv>Guardar como PDF</button>
-    </div>
-  </div>
+      <section>
+        <h2>Perfil</h2>
+        <p>Ingeniera en Sistemas con 5 años de experiencia trabajando con WordPress y proyectos digitales. Combino desarrollo web, UX/UI, integraciones, SEO, CRM y marketing para convertir necesidades de negocio en soluciones claras y funcionales.</p>
+      </section>
 
-  <main class="cv-page">
-    <header class="cv-header">
-      <p class="eyebrow">Currículum profesional</p>
-      <h1>Aline Peña Colunga</h1>
-      <p class="cv-title">Ingeniera en Sistemas · Marketing Digital · WordPress · CRM</p>
-      <div class="cv-meta">
-        <span>Veracruz, México</span>
-        <span>Modalidad remota</span>
-        <span>GitHub: AlinePC9128</span>
-      </div>
-    </header>
+      <section>
+        <h2>Experiencia relevante</h2>
+        <article class="job"><div class="job-head"><div><h3>Intersyst Seguridad y Control</h3><p>Especialista en marketing y programadora web</p></div><span>Experiencia actual / reciente</span></div><ul><li>Desarrollo y mantenimiento de sitios WordPress, landing pages y contenido corporativo.</li><li>Trabajo con Elementor, WooCommerce, PHP, HTML5, CSS3, JavaScript, SEO y optimización.</li><li>Creación de formularios y conexión con CRM, canales comerciales, chatbots y automatizaciones.</li><li>Campañas digitales, contenido, email marketing, analítica, video y reportes.</li><li>Documentación, procesos, indicadores y responsabilidad de calidad ISO 9001.</li></ul></article>
+        <article class="job"><div class="job-head"><div><h3>Proyectos de desarrollo e integración</h3><p>WordPress · Perfex CRM · Clientes_SAE · AUTOSISE</p></div><span>Casos seleccionados</span></div><ul><li>Personalización de módulo CRM y flujo de leads mediante HTTP/POST, webhooks y Zapier.</li><li>Diseño de arquitectura de información, user flows, wireframes y prototipos responsive.</li><li>Construcción de catálogos y experiencias de showroom para productos tecnológicos.</li></ul></article>
+      </section>
 
-    <section class="cv-section">
-      <h2>Perfil profesional</h2>
-      <p>
-        Ingeniera en Sistemas con experiencia en desarrollo y administración web,
-        marketing digital, gestión de CRM, documentación de procesos y análisis de datos.
-        Capaz de conectar necesidades comerciales con soluciones tecnológicas, crear
-        contenido visual y audiovisual, optimizar procesos y colaborar con equipos
-        técnicos, comerciales y creativos.
-      </p>
-    </section>
+      <section class="grid">
+        <div><h2>Experiencia comprobada</h2><ul><li>WordPress, Elementor, WPBakery y WooCommerce</li><li>PHP, HTML5, CSS3, JavaScript, jQuery y MySQL</li><li>UX/UI, Figma, arquitectura de información y responsive</li><li>SEO, GA4, Tag Manager y Search Console</li><li>CRM, Zapier, formularios, webhooks y automatización</li><li>Meta Ads, Google Ads, TikTok Ads y Mailchimp</li></ul></div>
+        <div><h2>Áreas en desarrollo</h2><ul><li>Gutenberg y Full Site Editing</li><li>React y consumo de REST APIs</li><li>WP-CLI para mantenimiento</li><li>GitHub Actions y CI/CD</li></ul><p class="honest">Estas tecnologías aparecen como aprendizaje continuo y demos del portafolio; no se presentan como experiencia avanzada.</p></div>
+      </section>
 
-    <section class="cv-section">
-      <h2>Experiencia</h2>
-
-      <article class="cv-job">
-        <div class="cv-job-header">
-          <div>
-            <h3>Intersyst Seguridad y Control</h3>
-            <p>Ingeniería en Sistemas y Marketing Digital</p>
-          </div>
-          <span>2022–2026</span>
-        </div>
-        <ul class="cv-list">
-          <li>Administración, actualización y optimización de sitios WordPress.</li>
-          <li>Creación de landing pages, catálogos y materiales digitales.</li>
-          <li>Apoyo en campañas de Meta Ads, Google Ads y email marketing.</li>
-          <li>Seguimiento de prospectos y oportunidades mediante CRM.</li>
-          <li>Elaboración de documentación funcional, manuales e indicadores.</li>
-          <li>Diseño de presentaciones, material comercial y contenido audiovisual.</li>
-        </ul>
-      </article>
-
-      <article class="cv-job">
-        <div class="cv-job-header">
-          <div>
-            <h3>DBC Empresarial</h3>
-            <p>Programación, soporte y marketing digital</p>
-          </div>
-          <span>2021–2022</span>
-        </div>
-        <ul class="cv-list">
-          <li>Apoyo en desarrollo, pruebas y mantenimiento de soluciones internas.</li>
-          <li>Participación en módulos de compras y herramientas CRM.</li>
-          <li>Soporte, capacitación y atención a usuarios.</li>
-          <li>Documentación de versiones y procesos.</li>
-          <li>Creación de contenidos para marketing y comunicación digital.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="cv-section cv-columns">
-      <div>
-        <h2>Formación académica</h2>
-        <h3>Ingeniería en Sistemas Computacionales</h3>
-        <p>
-          Formación en análisis de sistemas, desarrollo de software, bases de datos,
-          tecnologías de la información y gestión de proyectos.
-        </p>
-      </div>
-
-      <div>
-        <h2>Áreas de conocimiento</h2>
-        <ul class="cv-chip-list">
-          <li>WordPress</li>
-          <li>Marketing digital</li>
-          <li>CRM</li>
-          <li>UX/UI</li>
-          <li>Análisis de datos</li>
-          <li>ISO 9001</li>
-          <li>Automatización</li>
-          <li>Inteligencia artificial</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="cv-section">
-      <h2>Herramientas</h2>
-      <ul class="cv-chip-list">
-        <li>WordPress</li>
-        <li>Elementor</li>
-        <li>WPBakery</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Mailchimp</li>
-        <li>Salesforce</li>
-        <li>Excel</li>
-        <li>Power BI</li>
-        <li>Photoshop</li>
-        <li>Canva</li>
-        <li>Filmora</li>
-        <li>Meta Ads</li>
-        <li>Google Ads</li>
-      </ul>
-    </section>
-
-    <section class="cv-section">
-      <h2>Competencias</h2>
-      <p>
-        Comunicación efectiva · Organización · Resolución de problemas · Trabajo
-        colaborativo · Adaptabilidad · Orientación a resultados · Aprendizaje continuo
-      </p>
-    </section>
-
-    <section class="cv-section">
-      <h2>Contacto</h2>
-      <p>
-        GitHub: github.com/AlinePC9128<br>
-        Agrega aquí tu correo electrónico y tu perfil de LinkedIn antes de enviar el CV.
-      </p>
-    </section>
-  </main>
-</body>
+      <section><h2>Fortalezas</h2><ul class="chips"><li>Resolución de problemas</li><li>Comunicación</li><li>Organización</li><li>Aprendizaje continuo</li><li>Trabajo colaborativo</li><li>Orientación a resultados</li></ul></section>
+      <section><h2>Contacto</h2><p>GitHub: github.com/AlinePC9128/portafolio-de-trabajo</p><p>Agrega tu correo electrónico y LinkedIn antes de compartir este CV con reclutadores.</p></section>
+    </main>
+  </body>
 </html>
