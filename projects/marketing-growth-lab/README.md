@@ -1,5 +1,7 @@
 # Marketing Growth Lab
 
+Hub central: [Aline Labs](https://github.com/AlinePC9128/portafolio-de-trabajo/tree/main/labs) · [demo](./)
+
 Dashboard demostrativo para explicar una estrategia de marketing digital desde la campaña hasta la oportunidad comercial.
 
 ## Qué demuestra
