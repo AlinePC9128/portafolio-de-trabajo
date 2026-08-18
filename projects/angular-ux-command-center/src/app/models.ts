@@ -7,5 +7,9 @@ export interface Lead {
   source: string;
   value: number;
   stage: LeadStage;
+  priority: 'low' | 'medium' | 'high';
+  owner: string;
+  nextAction: string;
+  tags: string[];
   updatedAt: string;
 }
