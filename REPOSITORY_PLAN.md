@@ -4,16 +4,16 @@ Este archivo documenta la separación propuesta para convertir el hub en un port
 
 | Repositorio propuesto | Caso | Demo actual | Tecnologías |
 |---|---|---|---|
-| `angular-ux-command-center` | Centro de leads | `projects/angular-ux-command-center/demo/` | Angular 22, TypeScript, Signals, RxJS, Forms, HttpClient |
-| `api-contract-studio` | API de leads | `projects/api-contract-studio/demo/` | Node.js, TypeScript, Express, Zod, OpenAPI, Vitest, Docker |
-| `crm-webhook-orchestrator` | Webhook → CRM | `projects/crm-webhook-orchestrator/public/` | PHP 8.3, MySQL, HTTP/JSON, Docker |
-| `wordpress-woo-performance-kit` | Plugin CMS | `projects/wordpress-woo-performance-kit/` | PHP, WordPress, REST API, SEO, WooCommerce |
-| `ux-service-blueprint` | Caso de UX | `projects/ux-service-blueprint/` | UX Research, Figma, HTML, CSS, JavaScript, accesibilidad |
-| `marketing-growth-lab` | Campañas y funnel | `projects/marketing-growth-lab/` | GA4, Tag Manager, SEO, Ads, Mailchimp, Power BI, JavaScript |
+| [`angular-ux-command-center`](https://github.com/AlinePC9128/angular-ux-command-center) | Centro de leads | `projects/angular-ux-command-center/demo/` | Angular 22, TypeScript, Signals, RxJS, Forms, HttpClient |
+| [`api-contract-studio`](https://github.com/AlinePC9128/api-contract-studio) | API de leads | `projects/api-contract-studio/demo/` | Node.js, TypeScript, Express, Zod, OpenAPI, Vitest, Docker |
+| [`crm-webhook-orchestrator`](https://github.com/AlinePC9128/crm-webhook-orchestrator) | Webhook → CRM | `projects/crm-webhook-orchestrator/public/` | PHP 8.3, MySQL, HTTP/JSON, Docker |
+| [`wordpress-woo-performance-kit`](https://github.com/AlinePC9128/wordpress-woo-performance-kit) | Plugin CMS | `projects/wordpress-woo-performance-kit/` | PHP, WordPress, REST API, SEO, WooCommerce |
+| [`ux-service-blueprint`](https://github.com/AlinePC9128/ux-service-blueprint) | Caso de UX | `projects/ux-service-blueprint/` | UX Research, Figma, HTML, CSS, JavaScript, accesibilidad |
+| [`marketing-growth-lab`](https://github.com/AlinePC9128/marketing-growth-lab) | Campañas y funnel | `projects/marketing-growth-lab/` | GA4, Tag Manager, SEO, Ads, Mailchimp, Power BI, JavaScript |
 
 ## Estado
 
-Las seis implementaciones están preparadas dentro del hub para que sus demos puedan revisarse de inmediato. La conexión actual de GitHub permite escribir en `AlinePC9128/portafolio-de-trabajo`, pero no expone la creación automática de repositorios nuevos. Por eso cada carpeta tiene estructura, README y demo propios; al crear los seis repositorios vacíos, se pueden mover sin reescribir la arquitectura.
+Las seis implementaciones están publicadas como repositorios independientes y también se mantienen dentro del hub para que sus demos puedan revisarse desde un solo lugar. Cada repositorio incluye README, estructura de código y workflow de GitHub Pages para publicar su demo.
 
 ## Regla de presentación profesional
 
