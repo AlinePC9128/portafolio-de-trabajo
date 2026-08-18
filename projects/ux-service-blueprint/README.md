@@ -16,3 +16,10 @@ Caso de estudio interactivo para demostrar cómo paso de una necesidad ambigua a
 ## Stack
 
 HTML semántico, CSS responsive, JavaScript modular, accesibilidad básica y mobile-first. El contenido se puede llevar a Figma como sitemap, wireframe, componentes y prototipo.
+
+## Escenarios incluidos
+
+- Problem framing, user flow, wireframe, validación y service blueprint.
+- Research kit con entrevistas, analítica y pruebas de usabilidad.
+- Persona, hipótesis y criterios de éxito visibles en el caso.
+- Diseño responsive y navegación por teclado con contenido progresivo.
