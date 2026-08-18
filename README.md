@@ -1,72 +1,47 @@
-# Portafolio profesional de Aline Peña Colunga
+# Aline Peña — Portfolio técnico
 
-Sitio web estático creado para mostrar experiencia en Ingeniería en Sistemas,
-WordPress, marketing digital, CRM, UX/UI, documentación de procesos y análisis de datos.
+Portafolio demostrativo de Aline Peña, Ingeniera en Sistemas y WordPress Developer. El proyecto está diseñado para presentar experiencia en WordPress, UX/UI, frontend, integraciones, APIs, SEO, analítica y marketing digital mediante ejemplos navegables.
 
-## Archivos incluidos
+## Qué demuestra
 
-- `index.html`: página principal del portafolio.
-- `styles.css`: diseño adaptable para computadora y celular.
-- `script.js`: menú móvil, animaciones y botón de impresión del CV.
-- `cv.html`: versión web del currículum, lista para guardar como PDF.
-- `assets/favicon.svg`: ícono del sitio.
-- `.nojekyll`: evita que GitHub Pages procese el sitio con Jekyll.
+- **UX/UI:** proceso Discover → Organize → Prototype → Validate, arquitectura de información, user flows, wireframes y diseño responsive.
+- **Frontend:** HTML semántico, CSS responsive, componentes visuales, estados de interfaz, filtros, modal, navegación móvil y tema claro/oscuro.
+- **APIs:** demo funcional con `fetch()`, endpoint REST público, JSON, manejo de loading/error/fallback y filtrado de resultados.
+- **WordPress y WooCommerce:** casos de Intersyst y AUTOSISE, Elementor, formularios, SEO, catálogo y experiencia mobile-first.
+- **Backend e integraciones:** caso de Clientes_SAE, Perfex CRM, PHP/MySQL, HTTP/POST, webhooks y Zapier.
+- **Marketing digital:** campañas, SEO, GA4, Tag Manager, Search Console, Ads, Mailchimp y reportes.
+- **Accesibilidad básica:** HTML semántico, etiquetas de formulario, `aria-*`, navegación con teclado y soporte para `prefers-reduced-motion`.
 
-## Antes de compartirlo
+La página `cv.html` contiene una versión breve del perfil profesional, preparada para abrirse en el navegador y guardarse como PDF.
 
-Busca en `index.html` y `cv.html` la frase:
+## Estructura
 
-> Agrega tu correo y LinkedIn
-
-Reemplázala por tus datos reales. También puedes agregar botones con estas plantillas:
-
-```html
-<a href="mailto:TU_CORREO">Correo</a>
-<a href="TU_LINKEDIN" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+```text
+.
+├── index.html
+├── styles.css
+├── script.js
+├── cv.html
+├── assets/favicon.svg
+├── README.md
+├── .nojekyll
+└── .github/workflows/deploy-pages.yml
 ```
 
-No publiques números telefónicos, direcciones o información confidencial si no deseas
-que aparezcan en internet.
+## Ejecutar localmente
 
-## Cómo subirlo desde la página de GitHub
+No requiere framework ni instalación de dependencias. Puedes abrir `index.html` directamente o levantar un servidor local:
 
-1. Entra al repositorio `portafolio-de-trabajo`.
-2. Presiona **Add file**.
-3. Selecciona **Upload files**.
-4. Arrastra todos los archivos y la carpeta `assets`.
-5. En la parte inferior escribe un mensaje, por ejemplo:
-   `Publicar portafolio profesional`
-6. Presiona **Commit changes**.
-
-## Cómo activar GitHub Pages
-
-1. Abre el repositorio.
-2. Entra a **Settings**.
-3. En el menú lateral selecciona **Pages**.
-4. En **Build and deployment**, elige **Deploy from a branch**.
-5. Selecciona la rama **main**.
-6. Selecciona la carpeta **/(root)**.
-7. Presiona **Save**.
-
-Tu dirección será:
-
-`https://alinepc9128.github.io/portafolio-de-trabajo/`
-
-## Cómo crear el PDF del CV
-
-1. Abre `cv.html` desde el portafolio.
-2. Presiona **Guardar como PDF**.
-3. En la ventana de impresión selecciona **Guardar como PDF**.
-4. Guarda el archivo como `CV-Aline-Pena-Colunga.pdf`.
-
-## Personalización rápida
-
-Los colores principales se encuentran al inicio de `styles.css`, dentro de `:root`.
-
-```css
---primary: #7657ff;
---accent: #4bc6b9;
---dark: #0c1222;
+```bash
+python3 -m http.server 4173
 ```
 
-Puedes cambiar esos valores sin modificar el resto del diseño.
+Después visita `http://localhost:4173`.
+
+## Nota de honestidad profesional
+
+El portafolio separa experiencia comprobada de tecnologías que Aline está fortaleciendo. Gutenberg/FSE, React, REST API, WP-CLI y CI/CD aparecen como áreas de desarrollo continuo y como demos de aprendizaje; no se presentan como años de experiencia avanzada.
+
+## Publicar en GitHub Pages
+
+El workflow incluido puede desplegar el sitio cuando el repositorio tenga GitHub Pages configurado con **GitHub Actions** como fuente. El proyecto no utiliza secretos ni datos de clientes.
