@@ -1,5 +1,7 @@
 # UX Service Blueprint
 
+Hub central: [Aline Labs](https://github.com/AlinePC9128/portafolio-de-trabajo/tree/main/labs) · [demo](./)
+
 Caso de estudio interactivo para demostrar cómo paso de una necesidad ambigua a una experiencia digital comprobable.
 
 ## Entregables demostrados
