@@ -16,3 +16,11 @@ Dashboard demostrativo para explicar una estrategia de marketing digital desde l
 ## Stack
 
 HTML, CSS, JavaScript, JSON, visualización con barras CSS y estructura lista para conectar GA4, Power BI o una API de campañas.
+
+## Escenarios incluidos
+
+- Lectura de funnel por canal y comparación de paid, SEO y email.
+- Tabla de campaign mix con inversión, leads, CPL y estado accionable.
+- Generador UTM para gobernanza de campañas.
+- Backlog de experimentos con impacto y esfuerzo.
+- Panel adaptable para explicar resultados técnicos a negocio.
