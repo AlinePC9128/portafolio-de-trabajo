@@ -1,5 +1,7 @@
 # Angular UX Command Center
 
+Hub central: [Aline Labs](https://github.com/AlinePC9128/portafolio-de-trabajo/tree/main/labs) · [demo](./demo/)
+
 Centro de seguimiento de leads construido como ejemplo de frontend empresarial. La aplicación demuestra cómo organizar estado, datos, formularios y feedback sin perder claridad de uso.
 
 ## Stack
