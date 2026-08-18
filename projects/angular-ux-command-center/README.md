@@ -34,3 +34,17 @@ npm start
 ## Honestidad del caso
 
 Es un proyecto demostrativo para evidenciar la forma de trabajar con Angular y TypeScript. No se presenta como experiencia comercial previa en Angular.
+
+## Escenarios incluidos
+
+- Vista cards y vista tabla para el mismo estado.
+- Búsqueda por persona, empresa, fuente o etiqueta.
+- Filtro por etapa y responsable, detalle de oportunidad y next best action.
+- Alta rápida de leads con feedback inmediato.
+- Capa de insights para explicar decisiones de priorización.
+
+## Variantes de implementación
+
+1. `src/`: aplicación Angular real con Signals, `computed()`, Reactive Forms, Router y HttpClient.
+2. `demo/`: preview estática sin dependencias para revisión rápida.
+3. Fallback local en `LeadService` para mantener la UX útil aunque la API no responda.
