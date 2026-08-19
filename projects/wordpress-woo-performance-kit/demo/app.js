@@ -4,8 +4,19 @@ const panels = {
   woo: '<small>WOOCOMMERCE / CONVERSION</small><h3>Catálogo pensado para la siguiente acción.</h3><p>Hooks de loop, estados de stock y datos visibles reducen preguntas antes de pedir contacto o compra.</p><div class="checks"><span>✓ Stock badge</span><span>✓ Price clarity</span><span>✓ CTA por disponibilidad</span></div>',
   ops: '<small>MAINTENANCE / OBSERVABILITY</small><h3>Un CMS útil también se puede operar.</h3><p>Health endpoint, versión del plugin, cache strategy y checklist de staging hacen más fácil detectar problemas antes del usuario.</p><div class="checks"><span>✓ REST health</span><span>✓ Staging checklist</span><span>✓ Backup + rollback</span></div>'
 };
-const panel = document.querySelector('#panel');
+const products = [
+  { name: 'Sensor industrial', price: 18900, status: 'Disponible', sku: 'SEN-001', description: 'Monitoreo para operación industrial.' },
+  { name: 'Control de acceso', price: 12400, status: 'Disponible', sku: 'ACC-014', description: 'Gestión de entradas y usuarios.' },
+  { name: 'Kit CCTV', price: 24800, status: 'Preventa', sku: 'CCTV-220', description: 'Kit de videovigilancia para instalaciones.' },
+  { name: 'Gateway IoT', price: 9800, status: 'Disponible', sku: 'IOT-034', description: 'Conectividad para sensores remotos.' }
+];
+const panel = document.querySelector('#panel'); const grid = document.querySelector('#catalog-grid'); const money = (value) => `$${value.toLocaleString('es-MX')}`;
+function setupTheme() { const button = document.querySelector('#theme-toggle'); const apply = (theme) => { document.body.dataset.theme = theme; button.querySelector('.theme-label').textContent = theme === 'dark' ? 'Claro' : 'Oscuro'; button.setAttribute('aria-pressed', String(theme === 'dark')); }; apply(localStorage.getItem('portfolio-demo-theme') || 'light'); button.addEventListener('click', () => { const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('portfolio-demo-theme', next); apply(next); }); }
+function notify(message) { const node = document.createElement('div'); node.className = 'toast'; node.textContent = message; document.body.appendChild(node); setTimeout(() => node.remove(), 1800); }
 function render(key) { panel.innerHTML = panels[key]; document.querySelectorAll('[data-panel]').forEach((button) => button.classList.toggle('active', button.dataset.panel === key)); }
+function renderCatalog() { const query = document.querySelector('#product-search').value.toLowerCase().trim(); const sort = document.querySelector('#product-sort').value; const rows = products.filter((product) => `${product.name} ${product.sku} ${product.status}`.toLowerCase().includes(query)).sort((a, b) => sort === 'price-asc' ? a.price - b.price : sort === 'price-desc' ? b.price - a.price : a.name.localeCompare(b.name)); grid.innerHTML = rows.length ? rows.map((product) => `<article><b>${product.name}</b><span>${product.status} · ${money(product.price)}</span><small>SKU ${product.sku}</small><button data-product="${product.sku}" type="button">Ver producto</button></article>`).join('') : '<p class="empty">No hay productos para esa búsqueda.</p>'; document.querySelectorAll('[data-product]').forEach((button) => button.addEventListener('click', () => { const product = products.find((item) => item.sku === button.dataset.product); document.querySelector('#product-status').textContent = `${product.name}: ${product.description} Precio ${money(product.price)} · estado ${product.status}.`; })); }
 document.querySelectorAll('[data-panel]').forEach((button) => button.addEventListener('click', () => render(button.dataset.panel)));
 document.querySelector('#catalog').addEventListener('click', () => document.querySelector('#catalog-grid').scrollIntoView({ behavior: 'smooth' }));
-render('overview');
+document.querySelector('#product-search').addEventListener('input', renderCatalog); document.querySelector('#product-sort').addEventListener('change', renderCatalog);
+document.querySelector('#health-check').addEventListener('click', () => { document.querySelector('#score').textContent = '100'; document.querySelector('#score-note').textContent = 'REST health check: OK'; notify('Health check completado · 4/4 checks'); });
+setupTheme(); render('overview'); renderCatalog();
