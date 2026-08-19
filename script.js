@@ -106,7 +106,13 @@ const openProject = (projectKey) => {
   $("#modal-note").textContent = data.note;
   modal.showModal();
 };
-$$('.project-open').forEach((button) => button.addEventListener('click', () => openProject(button.dataset.project)));
+$$('.project-open').forEach((button) => button.addEventListener('click', () => {
+  if (button.dataset.demo) {
+    window.location.assign(button.dataset.demo);
+    return;
+  }
+  openProject(button.dataset.project);
+}));
 $("#modal-close")?.addEventListener('click', () => modal.close());
 modal?.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
 
