@@ -16,27 +16,28 @@
           <p>Un workspace para explorar datos, priorizar oportunidades y entender cómo una interfaz puede convertir actividad comercial en decisiones.</p>
           <div class="feature-row"><span>Signals</span><span>Reactive Forms</span><span>HttpClient</span><span>State derived</span></div>
         </div>
-        <a href="../../../labs/index.html">← Todos los proyectos</a>
+        <div class="header-actions"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false"><span class="theme-track" aria-hidden="true"><span class="theme-knob"></span></span><span class="theme-label">Oscuro</span></button><a href="../../../labs/index.html">← Todos los proyectos</a></div>
       </header>
 
       <section class="metrics" aria-label="Métricas del pipeline">
         <div><small>Oportunidades</small><b id="count">8</b><em id="count-note">+18% vs. periodo anterior</em></div>
         <div><small>Pipeline total</small><b id="total">$164,500</b><em>Valor estimado</em></div>
-        <div><small>Conversión</small><b>24.8%</b><em>Meta mensual: 20%</em></div>
-        <div><small>Tiempo de respuesta</small><b>2.4h</b><em>↓ 31% esta semana</em></div>
+        <div><small>Conversión</small><b id="conversion">24.8%</b><em>Meta mensual: 20%</em></div>
+        <div><small>Tiempo de respuesta</small><b id="response-time">2.4h</b><em>↓ 31% esta semana</em></div>
       </section>
 
       <section class="workspace" aria-label="Explorador de leads">
         <div class="toolbar">
           <div class="toolbar-main"><label for="search">Buscar</label><input id="search" placeholder="Persona, empresa o etiqueta" /></div>
           <div class="toolbar-main"><label for="owner">Responsable</label><select id="owner"><option value="all">Todo el equipo</option><option>Mariana</option><option>Diego</option><option>Aline</option></select></div>
-          <div class="toolbar-actions"><button class="view active" data-view="cards">Cards</button><button class="view" data-view="table">Tabla</button></div>
+          <div class="toolbar-main"><label for="priority">Prioridad</label><select id="priority"><option value="all">Todas</option><option>Alta</option><option>Media</option><option>Baja</option></select></div>
+          <div class="toolbar-actions"><button class="view active" data-view="cards">Cards</button><button class="view" data-view="table">Tabla</button><button id="clear-filters" type="button">Limpiar</button><button id="export-leads" type="button">Exportar CSV</button></div>
         </div>
         <div class="filters" role="group" aria-label="Filtrar por etapa"><button class="filter active" data-stage="all">Todos <span>8</span></button><button class="filter" data-stage="new">Nuevos <span>2</span></button><button class="filter" data-stage="qualified">Calificados <span>2</span></button><button class="filter" data-stage="proposal">Propuesta <span>2</span></button><button class="filter" data-stage="won">Ganados <span>2</span></button></div>
         <div class="workspace-body"><div id="leads" class="grid"></div><aside id="detail" class="detail" aria-live="polite"><span class="detail-kicker">Selecciona un lead</span><h2>El contexto aparece aquí.</h2><p>Haz clic en una oportunidad para ver su origen, valor, prioridad y siguiente acción.</p></aside></div>
       </section>
 
-      <section class="capture"><div><span class="eyebrow">Quick capture / Reactive Form</span><h2>Agregar una oportunidad.</h2><p>El mismo flujo puede iniciar en un formulario, una API o una importación de CRM.</p></div><form id="lead-form"><input id="new-name" required placeholder="Nombre" /><input id="new-company" required placeholder="Empresa" /><select id="new-source"><option>Website</option><option>Meta Ads</option><option>Referido</option><option>Evento</option></select><button type="submit">Guardar lead ↗</button></form></section>
+      <section class="capture"><div><span class="eyebrow">Quick capture / Reactive Form</span><h2>Agregar una oportunidad.</h2><p>El mismo flujo puede iniciar en un formulario, una API o una importación de CRM.</p></div><form id="lead-form"><input id="new-name" required placeholder="Nombre" /><input id="new-company" required placeholder="Empresa" /><select id="new-source"><option>Website</option><option>Meta Ads</option><option>Referido</option><option>Evento</option></select><input id="new-value" type="number" min="0" placeholder="Valor estimado" /><select id="new-owner"><option>Aline</option><option>Mariana</option><option>Diego</option></select><button type="submit">Guardar lead ↗</button></form></section>
 
       <section class="insights"><div class="section-title"><span class="eyebrow">Decision layer</span><h2>De la lista a la siguiente acción.</h2><p>Un dashboard útil no solo muestra datos: ayuda a decidir qué hacer después.</p></div><div class="insight-grid"><article><small>ETAPA CON MÁS VALOR</small><strong>Propuesta</strong><span>60% del pipeline está en negociación.</span><div class="mini-bar"><i style="width:72%"></i></div></article><article><small>FUENTE A PRIORIZAR</small><strong>Referidos</strong><span>Mejor conversión: 41% en este corte.</span><div class="mini-bar green"><i style="width:86%"></i></div></article><article><small>RIESGO OPERATIVO</small><strong>3 leads</strong><span>Sin contacto en las últimas 24 horas.</span><div class="mini-bar orange"><i style="width:38%"></i></div></article></div></section>
       <div class="proof"><span>Angular 22 source</span><span>Static preview</span><span>Signals + computed()</span><span>API fallback</span><span>Typed forms</span></div>
