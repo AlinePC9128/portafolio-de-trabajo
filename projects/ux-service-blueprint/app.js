@@ -19,4 +19,5 @@ function copyText(value) { if (navigator.clipboard?.writeText) return navigator.
 document.querySelectorAll('[data-step]').forEach((btn) => btn.addEventListener('click', () => render(btn.dataset.step)));
 document.querySelectorAll('[data-method]').forEach((btn) => btn.addEventListener('click', () => { document.querySelectorAll('[data-method]').forEach((item) => item.classList.toggle('active', item === btn)); document.querySelector('#method-output').innerHTML = methods[btn.dataset.method]; }));
 document.querySelector('#export-case').addEventListener('click', exportCase); document.querySelector('#copy-brief').addEventListener('click', async () => { await copyText(`${cases[current].title}\n\n${cases[current].text}`); notify('Brief copiado'); }); document.querySelector('#reset-case').addEventListener('click', () => { render('problem'); notify('Caso reiniciado'); });
+const hubLink = document.querySelector('a[href*="labs/index.html"]'); if (hubLink) hubLink.href = 'https://alinepc9128.github.io/portafolio-de-trabajo/labs/index.html';
 setupTheme(); render(current); document.querySelector('#method-output').innerHTML = methods.interviews;
