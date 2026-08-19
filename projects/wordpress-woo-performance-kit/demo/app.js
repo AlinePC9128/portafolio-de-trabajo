@@ -19,4 +19,5 @@ document.querySelectorAll('[data-panel]').forEach((button) => button.addEventLis
 document.querySelector('#catalog').addEventListener('click', () => document.querySelector('#catalog-grid').scrollIntoView({ behavior: 'smooth' }));
 document.querySelector('#product-search').addEventListener('input', renderCatalog); document.querySelector('#product-sort').addEventListener('change', renderCatalog);
 document.querySelector('#health-check').addEventListener('click', () => { document.querySelector('#score').textContent = '100'; document.querySelector('#score-note').textContent = 'REST health check: OK'; notify('Health check completado · 4/4 checks'); });
+const hubLink = document.querySelector('a[href*="labs/index.html"]'); if (hubLink) hubLink.href = 'https://alinepc9128.github.io/portafolio-de-trabajo/labs/index.html';
 setupTheme(); render('overview'); renderCatalog();
