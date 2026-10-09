@@ -1,51 +1,58 @@
-# Aline Peña — Portfolio técnico
+# Aline Peña — Growth, web y datos
 
-Portafolio demostrativo de Aline Peña, Ingeniera en Sistemas y WordPress Developer. El proyecto está diseñado para presentar experiencia en WordPress, UX/UI, frontend, integraciones, APIs, SEO, analítica y marketing digital mediante ejemplos navegables.
+[Ver portafolio](https://alinepc9128.github.io/portafolio-de-trabajo/) · [Probar Growth Lab](https://alinepc9128.github.io/portafolio-de-trabajo/projects/marketing-growth-lab/) · [Ver CV](https://alinepc9128.github.io/portafolio-de-trabajo/cv.html)
 
-## Qué demuestra
+Portafolio de Aline Peña Colunga, Ingeniera en Sistemas Computacionales con experiencia en adquisición, paid media, desarrollo web, SEO, analítica, CRM y automatización. La presentación conecta el trabajo publicado con el aporte profesional y con demostraciones navegables.
 
-- **UX/UI:** proceso Discover → Organize → Prototype → Validate, arquitectura de información, user flows, wireframes y diseño responsive.
-- **Frontend:** HTML semántico, CSS responsive, componentes visuales, estados de interfaz, filtros, modal, navegación móvil y tema claro/oscuro.
-- **APIs:** demo funcional con `fetch()`, endpoint REST público, JSON, manejo de loading/error/fallback y filtrado de resultados.
-- **WordPress y WooCommerce:** casos de Intersyst y AUTOSISE, Elementor, formularios, SEO, catálogo y experiencia mobile-first.
-- **Backend e integraciones:** caso de Clientes_SAE, Perfex CRM, PHP/MySQL, HTTP/POST, webhooks y Zapier.
-- **Marketing digital:** campañas, SEO, GA4, Tag Manager, Search Console, Ads, Mailchimp y reportes.
-- **Accesibilidad básica:** HTML semántico, etiquetas de formulario, `aria-*`, navegación con teclado y soporte para `prefers-reduced-motion`.
+## Trabajo aplicado
 
-La página `cv.html` contiene una versión breve del perfil profesional, preparada para abrirse en el navegador y guardarse como PDF.
+La portada presenta Intersyst, las landings Comunicador de Alarma Universal y Cámara de Interior, automatización con Perfex CRM/Zapier/webhooks y AUTOSISE. Cada caso explica el objetivo, mi aporte y lo que permite revisar el enlace público.
 
-## Laboratorio de proyectos
+El alcance profesional procede del CV aportado por Aline: aproximadamente 200 leads al mes en seguimiento, 31 integraciones, 3 sitios y 4 landing pages, y más de 200 productos administrados en WooCommerce. Estas cifras describen responsabilidades; el portafolio no las convierte en tasas de crecimiento o ventas inventadas.
 
-La ruta `labs/index.html` enlaza seis casos demostrativos independientes: Angular/TypeScript, API Node, CRM/webhooks, WordPress/WooCommerce, UX/UI y marketing digital. La matriz técnica y la estrategia para separar cada caso en su propio repositorio están en `REPOSITORY_PLAN.md`.
+## Qué puedes probar
+
+- **Análisis de campañas:** filtros por país y canal, CTR, CPL, aceptación comercial y costo por oportunidad. Los totales y las tasas se calculan desde los registros; el CSV exporta el filtro actual.
+- **UTM:** constructor con validación de destinos HTTP/HTTPS, conservación de parámetros ajenos a UTMs y del fragmento, y reemplazo de UTMs antiguas.
+- **Medición:** plan propuesto de GA4/GTM y simulación de error, recepción confirmada y confirmación repetida. La simulación usa eventos locales y mantiene una sola conversión por solicitud.
+- **CRO:** conversión de dos variantes, diferencia en puntos porcentuales y cambio relativo. Es una comparación descriptiva; no declara significancia estadística.
+- **CRM, CMS y UX:** se conservan las demos existentes y sus rutas dentro de projects/ y labs/.
+
+Los datos de Growth Lab son ficticios. La inversión se expresa en MXN en todos los países del escenario para mantener una unidad de comparación. Las demos no usan credenciales, cuentas de anuncios ni información de clientes.
+
+## Habilidades y niveles
+
+Google Ads, Meta Ads, TikTok Ads, GA4, GTM, Search Console, WordPress, Elementor, WooCommerce, Perfex CRM, Zapier, Mailchimp, Excel y Power BI se presentan conforme al CV. Looker Studio se describe como familiaridad. Angular/TypeScript y Node.js permanecen como práctica técnica.
 
 ## Estructura
 
-```text
-.
-├── index.html
-├── styles.css
-├── script.js
-├── cv.html
-├── assets/favicon.svg
-├── README.md
-├── .nojekyll
-└── .github/workflows/deploy-pages.yml
-```
+- index.html, styles.css, script.js: portada, casos, habilidades y navegación.
+- cv.html, cv.css, cv.js: CV alineado con el archivo aportado; imprimir o guardar como PDF desde el navegador.
+- projects/marketing-growth-lab/: laboratorio con core.js (cálculos), app.js (interfaz), README y pruebas.
+- projects/: demostraciones existentes de CRM, WordPress, UX, Angular y API.
+- labs/: laboratorio técnico existente.
+- assets/favicon.svg: identidad visual.
+- .github/workflows/deploy-pages.yml: publicación existente de GitHub Pages.
 
-## Ejecutar localmente
+## Revisar localmente
 
-No requiere framework ni instalación de dependencias. Puedes abrir `index.html` directamente o levantar un servidor local:
+Sitio estático sin build ni dependencias de ejecución. Desde la raíz:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Después visita `http://localhost:4173`.
+Abre http://localhost:4173. Para ejecutar las pruebas del laboratorio:
 
-## Nota de honestidad profesional
+```bash
+node --test projects/marketing-growth-lab/test/core.test.cjs
+```
 
-El portafolio separa experiencia comprobada de tecnologías que Aline está fortaleciendo. Gutenberg/FSE, React, REST API, WP-CLI y CI/CD aparecen como áreas de desarrollo continuo y como demos de aprendizaje; no se presentan como años de experiencia avanzada.
+El workflow existente publica los cambios de main en GitHub Pages. Los formularios del laboratorio ejecutan cálculos y simulaciones locales; el contacto del portafolio abre el correo del visitante.
 
-## Publicar en GitHub Pages
+## Referencias de medición
 
-El workflow incluido puede desplegar el sitio cuando el repositorio tenga GitHub Pages configurado con **GitHub Actions** como fuente. El proyecto no utiliza secretos ni datos de clientes.
+[Medición mejorada de GA4](https://support.google.com/analytics/answer/9216061?hl=es) · [Eventos recomendados de GA4](https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtm)
+
+El evento recomendado generate_lead representa la generación de un lead. El plan propone usar la confirmación de recepción como disparador y comprobar la instrumentación automática de formularios antes de añadir eventos manuales.
+

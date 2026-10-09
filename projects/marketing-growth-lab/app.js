@@ -1,21 +1,86 @@
-const channels = {
-  all: { leads: 200, cpl: '$86', conversion: '12.8%', roas: '3.6x', note: '+28.4% vs. periodo anterior', bars: [55, 75, 40, 63] },
-  paid: { leads: 143, cpl: '$91', conversion: '10.4%', roas: '3.1x', note: 'Vista filtrada · Meta + Google', bars: [67, 86, 18, 42] },
-  organic: { leads: 39, cpl: '$31', conversion: '18.2%', roas: '5.4x', note: 'Vista filtrada · SEO', bars: [25, 34, 92, 30] },
-  retention: { leads: 18, cpl: '$23', conversion: '26.1%', roas: '6.2x', note: 'Vista filtrada · Email', bars: [20, 25, 38, 94] }
-};
-const campaigns = [['Google Ads', 4800, 92, 52, 'Escalar'], ['Meta Ads', 5600, 51, 110, 'Optimizar'], ['SEO', 1200, 39, 31, 'Sostener'], ['Email', 420, 18, 23, 'Expandir']];
-function setupTheme() { const button = document.querySelector('#theme-toggle'); const apply = (theme) => { document.body.dataset.theme = theme; button.querySelector('.theme-label').textContent = theme === 'dark' ? 'Claro' : 'Oscuro'; button.setAttribute('aria-pressed', String(theme === 'dark')); }; apply(localStorage.getItem('portfolio-demo-theme') || 'light'); button.addEventListener('click', () => { const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('portfolio-demo-theme', next); apply(next); }); }
-function notify(message) { const node = document.createElement('div'); node.className = 'toast'; node.textContent = message; document.body.appendChild(node); setTimeout(() => node.remove(), 1800); }
-function copyText(value) { if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(value); const area = document.createElement('textarea'); area.value = value; document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove(); return Promise.resolve(); }
-function updateDashboard(key) { const data = channels[key]; document.querySelectorAll('[data-channel]').forEach((item) => item.classList.toggle('active', item.dataset.channel === key)); document.querySelector('#leads').textContent = data.leads; document.querySelector('#cpl').textContent = data.cpl; document.querySelector('#conversion').textContent = data.conversion; document.querySelector('#roas').textContent = data.roas; document.querySelector('#leads-note').textContent = data.note; document.querySelector('#growth').textContent = key === 'all' ? '+28.4%' : 'escenario'; document.querySelectorAll('#bars i').forEach((bar, index) => { bar.style.height = `${data.bars[index]}%`; }); }
-function buildUtm() { const base = document.querySelector('#base-url').value.trim(); const source = document.querySelector('#utm-source').value.trim(); const medium = document.querySelector('#utm-medium').value.trim(); const campaign = document.querySelector('#utm-campaign').value.trim(); if (!base || !source || !medium || !campaign) throw new Error('Completa todos los campos UTM'); try { new URL(base); } catch { throw new Error('La URL base no es válida'); } const separator = base.includes('?') ? '&' : '?'; return `${base}${separator}utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign)}`; }
-function exportMix() { const csv = ['canal,inversion,leads,cpl,estado', ...campaigns.map((row) => row.join(','))].join('\n'); const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([`\ufeff${csv}`], { type: 'text/csv' })); link.download = 'marketing-campaign-mix.csv'; link.click(); setTimeout(() => URL.revokeObjectURL(link.href), 0); notify('Campaign mix exportado'); }
-document.querySelectorAll('[data-channel]').forEach((button) => button.addEventListener('click', () => updateDashboard(button.dataset.channel)));
-document.querySelector('#date-range').addEventListener('change', (event) => { document.querySelector('.chart-card small').textContent = event.target.selectedOptions[0].textContent + ' · datos demostrativos'; notify(`Periodo: ${event.target.selectedOptions[0].textContent}`); });
-document.querySelector('#export-mix').addEventListener('click', exportMix);
-document.querySelector('#utm-form').addEventListener('submit', (event) => { event.preventDefault(); try { document.querySelector('#utm-result').textContent = buildUtm(); notify('UTM generado'); } catch (error) { notify(error.message); } });
-document.querySelector('#copy-utm').addEventListener('click', async () => { try { const url = buildUtm(); document.querySelector('#utm-result').textContent = url; await copyText(url); notify('UTM copiado'); } catch (error) { notify(error.message); } });
-const experiments = JSON.parse(localStorage.getItem('marketing-experiments') || '{}'); document.querySelectorAll('.experiment-toggle').forEach((button) => { const key = button.dataset.experiment; const refresh = () => { button.textContent = experiments[key] ? 'En prueba ✓' : 'Marcar en prueba'; button.classList.toggle('done', Boolean(experiments[key])); }; button.addEventListener('click', () => { experiments[key] = !experiments[key]; localStorage.setItem('marketing-experiments', JSON.stringify(experiments)); refresh(); notify(experiments[key] ? `${key} agregado al plan` : `${key} removido del plan`); }); refresh(); });
-const hubLink = document.querySelector('a[href*="labs/index.html"]'); if (hubLink) hubLink.href = 'https://alinepc9128.github.io/portafolio-de-trabajo/labs/index.html';
-setupTheme(); updateDashboard('all');
+"use strict";
+(() => {
+  const G = window.GrowthLab;
+  const $ = selector => document.querySelector(selector);
+  const number = new Intl.NumberFormat("es-MX");
+  const currency = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const percent = new Intl.NumberFormat("es-MX", { style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 2 });
+  const money = value => value === null ? "N/D" : currency.format(value);
+  const rate = value => value === null ? "N/D" : percent.format(value);
+  const setText = (selector, text) => { $(selector).textContent = text; };
+  function status(selector, message, error = false) { const el = $(selector); el.textContent = message; el.classList.toggle("error", error); }
+  function currentRows() { return G.filterCampaigns($("#channel-filter").value, $("#country-filter").value); }
+  function updateCampaigns() {
+    const rows = currentRows(), total = G.summarize(rows);
+    for (const [id, value] of Object.entries({ "spend": money(total.spend), "leads": number.format(total.leads), "cpl": money(total.cpl), "opportunities": number.format(total.opportunities), "cpo": money(total.cpo), "acceptance": rate(total.acceptance) })) setText("#metric-" + id, value);
+    setText("#funnel-clicks", number.format(total.clicks)); setText("#funnel-leads", number.format(total.leads)); setText("#funnel-opps", number.format(total.opportunities));
+    setText("#funnel-note", "CTR: " + rate(total.ctr) + " · Clic a lead: " + rate(total.conversion) + ". Tasas calculadas desde los totales.");
+    const body = $("#campaign-rows"); body.replaceChildren();
+    for (const row of rows) {
+      const tr = document.createElement("tr"), m = G.summarize([row]);
+      const values = [row.name, G.countryNames[row.country], money(row.spend), rate(m.ctr), number.format(row.leads), money(m.cpl), number.format(row.opportunities), rate(m.acceptance), money(m.cpo)];
+      values.forEach((value, i) => {
+        const td = document.createElement("td"); td.textContent = value;
+        if (i === 0) { const small = document.createElement("small"); small.textContent = G.channelNames[row.channel]; td.appendChild(small); }
+        tr.appendChild(td);
+      }); body.appendChild(tr);
+    }
+    const insight = $("#campaign-insight"); insight.classList.toggle("empty", !rows.length);
+    if (!rows.length) {
+      const tr = document.createElement("tr"), td = document.createElement("td"); td.colSpan = 9; td.textContent = "No hay campañas para esta combinación. Prueba otro filtro."; tr.appendChild(td); body.appendChild(tr);
+      insight.textContent = "No hay registros en el filtro seleccionado. Las tasas sin denominador aparecen como N/D.";
+    } else {
+      const ranking = rows.filter(row => row.opportunities > 0).slice().sort((a, b) => G.summarize([a]).cpo - G.summarize([b]).cpo);
+      if (!ranking.length) insight.textContent = "El filtro no registra oportunidades. Revisaría calidad del lead y seguimiento antes de valorar una ampliación de inversión.";
+      else {
+        const best = ranking[0], cheapest = rows.filter(row => row.leads > 0).slice().sort((a, b) => G.summarize([a]).cpl - G.summarize([b]).cpl)[0];
+        insight.textContent = G.channelNames[best.channel] + " · " + G.countryNames[best.country] + " tiene el menor costo por oportunidad de este filtro (" + money(G.summarize([best]).cpo) + "). " + (cheapest && cheapest.id !== best.id ? "La campaña con el CPL más bajo es otra: revisaría la aceptación comercial antes de mover presupuesto." : "Compararía calidad, capacidad de seguimiento y volumen antes de ampliar la inversión.");
+      }
+    }
+  }
+  function download(text, filename, type) {
+    const url = URL.createObjectURL(new Blob([text], { type }));
+    const link = document.createElement("a"); link.href = url; link.download = filename; document.body.appendChild(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  $("#channel-filter").addEventListener("change", updateCampaigns);
+  $("#country-filter").addEventListener("change", updateCampaigns);
+  $("#export-campaigns").addEventListener("click", () => download("\ufeff" + G.campaignCsv(currentRows()), "growth-lab-campanas-demo.csv", "text/csv;charset=utf-8"));
+  function utmValues() { return { base: $("#base-url").value, source: $("#utm-source").value, medium: $("#utm-medium").value, campaign: $("#utm-campaign").value, content: $("#utm-content").value }; }
+  let generatedUrl = "";
+  function generateUtm() {
+    generatedUrl = G.buildUtm(utmValues()); $("#utm-result").textContent = generatedUrl; status("#utm-status", "Enlace generado. Revisa destino y nomenclatura antes de usarlo."); return generatedUrl;
+  }
+  $("#utm-form").addEventListener("submit", event => { event.preventDefault(); try { generateUtm(); } catch (error) { generatedUrl = ""; $("#utm-result").textContent = "Corrige el destino o los campos para generar un nuevo enlace."; status("#utm-status", error.message, true); } });
+  $("#utm-form").addEventListener("input", () => { generatedUrl = ""; $("#utm-result").textContent = "Los campos cambiaron. Genera el enlace para actualizarlo."; status("#utm-status", ""); });
+  $("#copy-utm").addEventListener("click", async () => {
+    try {
+      const value = generateUtm();
+      if (!navigator.clipboard?.writeText) { status("#utm-status", "Tu navegador no permite copiar automáticamente. Selecciona y copia el enlace mostrado."); return; }
+      await navigator.clipboard.writeText(value); status("#utm-status", "Enlace copiado.");
+    } catch (error) { status("#utm-status", error.message || "Selecciona y copia el enlace mostrado.", true); }
+  });
+  let tracking = G.createTrackingSession();
+  document.querySelectorAll("[data-track]").forEach(button => button.addEventListener("click", () => {
+    const result = tracking.step(button.dataset.track); $("#tracking-trace").textContent = JSON.stringify(result.events, null, 2);
+    setText("#lead-event-count", String(result.events.filter(item => item.event === "generate_lead").length));
+    status("#tracking-status", result.message);
+  }));
+  $("#reset-tracking").addEventListener("click", () => { tracking = G.createTrackingSession(); setText("#tracking-trace", "[]"); setText("#lead-event-count", "0"); status("#tracking-status", "Simulación reiniciada."); });
+  $("#export-tracking").addEventListener("click", () => download(JSON.stringify(G.trackingPlan, null, 2), "growth-lab-plan-medicion-demo.json", "application/json"));
+  function updateCro() {
+    const values = ["#visits-a", "#leads-a", "#visits-b", "#leads-b"].map(selector => { const raw = $(selector).value.trim(); if (!raw) throw new Error("Completa las visitas y los leads de ambas variantes."); return Number(raw); });
+    const result = G.compareVariants(...values);
+    setText("#rate-a", rate(result.rateA)); setText("#rate-b", rate(result.rateB));
+    const pp = new Intl.NumberFormat("es-MX", { maximumFractionDigits: 2 }).format(result.absoluteLift * 100);
+    setText("#absolute-lift", (result.absoluteLift > 0 ? "+" : "") + pp + " pp");
+    setText("#relative-lift", result.relativeLift === null ? "N/D" : (result.relativeLift > 0 ? "+" : "") + rate(result.relativeLift));
+    setText("#cro-interpretation", result.absoluteLift === 0 ? "Las variantes tienen la misma conversión observada. Revisaría calidad del lead y el diseño de la prueba." : (result.absoluteLift > 0 ? "B" : "A") + " tiene una conversión observada mayor. Esto describe los datos introducidos; no demuestra por sí solo que el cambio cause una mejora.");
+    status("#cro-status", "Comparación calculada. Revisa también la aceptación comercial.");
+  }
+  $("#cro-form").addEventListener("submit", event => { event.preventDefault(); try { updateCro(); } catch (error) {
+    for (const id of ["#rate-a", "#rate-b", "#absolute-lift", "#relative-lift"]) setText(id, "—");
+    setText("#cro-interpretation", "Corrige los datos para comparar las variantes."); status("#cro-status", error.message, true);
+  } });
+  $("#cro-form").addEventListener("input", () => { for (const id of ["#rate-a", "#rate-b", "#absolute-lift", "#relative-lift"]) setText(id, "—"); setText("#cro-interpretation", "Los datos cambiaron. Pulsa Comparar variantes para actualizar."); status("#cro-status", ""); });
+  updateCampaigns(); updateCro();
+})();

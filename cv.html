@@ -1,83 +1,15 @@
 <!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CV de Aline Peña: PHP, JavaScript, MySQL, Figma, UX/UI, APIs, integraciones, WordPress y marketing digital." />
-    <title>CV — Aline Peña | PHP, JavaScript, MySQL & UX/UI</title>
-    <style>
-      :root { --ink:#0a1728; --muted:#637086; --line:#dce4ee; --blue:#2f80ed; --cyan:#55d6d2; --navy:#08111f; --bg:#f4f7fb; }
-      * { box-sizing:border-box; }
-      body { margin:0; color:var(--ink); background:var(--bg); font-family:Arial, sans-serif; line-height:1.55; }
-      .toolbar { position:sticky; top:0; z-index:2; display:flex; justify-content:space-between; gap:12px; padding:14px max(18px, calc((100% - 900px)/2)); border-bottom:1px solid var(--line); background:rgba(244,247,251,.92); backdrop-filter:blur(12px); }
-      .toolbar a,.toolbar button { padding:9px 14px; border:1px solid var(--line); border-radius:999px; color:var(--ink); background:#fff; font-weight:700; text-decoration:none; cursor:pointer; }
-      .toolbar button { color:#fff; border-color:var(--navy); background:var(--navy); }
-      .page { width:min(900px, calc(100% - 30px)); margin:30px auto; padding:clamp(28px, 6vw, 66px); background:#fff; box-shadow:0 22px 70px rgba(21,45,78,.12); }
-      header { padding-bottom:28px; border-bottom:4px solid var(--cyan); }
-      .eyebrow { margin:0 0 10px; color:var(--blue); font:700 11px/1.2 monospace; letter-spacing:.12em; text-transform:uppercase; }
-      h1,h2,h3 { margin-top:0; letter-spacing:-.04em; line-height:1.15; }
-      h1 { margin-bottom:7px; font-size:clamp(38px,7vw,62px); }
-      h2 { margin-bottom:15px; font-size:23px; }
-      h3 { margin-bottom:4px; font-size:17px; }
-      .title { margin:0; color:var(--blue); font-weight:700; }
-      .meta { display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:17px; color:var(--muted); font-size:13px; }
-      section { padding:27px 0; border-bottom:1px solid var(--line); }
-      section:last-child { border:0; }
-      section > p { color:var(--muted); }
-      .job + .job { margin-top:25px; padding-top:25px; border-top:1px solid var(--line); }
-      .job-head { display:flex; justify-content:space-between; gap:18px; }
-      .job-head p { margin:0; color:var(--blue); font-size:13px; font-weight:700; }
-      .job-head span { color:var(--muted); font-size:13px; white-space:nowrap; }
-      ul { color:var(--muted); }
-      .grid { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
-      .chips { display:flex; flex-wrap:wrap; gap:7px; padding:0; list-style:none; }
-      .chips li { padding:6px 9px; border:1px solid var(--line); border-radius:6px; color:var(--muted); font:11px monospace; }
-      .metric-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:18px; }
-      .metric { padding:14px; border:1px solid var(--line); border-radius:10px; background:#f8fbff; }
-      .metric strong,.metric span { display:block; }
-      .metric strong { color:var(--blue); font-size:21px; line-height:1.1; }
-      .metric span { margin-top:4px; color:var(--muted); font-size:11px; }
-      .stack-group + .stack-group { margin-top:16px; }
-      .stack-group h3 { margin-bottom:5px; color:var(--blue); font-size:14px; }
-      .stack-group p { margin:0; color:var(--muted); font-size:13px; }
-      .honest { padding:16px; border-left:3px solid var(--cyan); color:var(--muted); background:#eefaf9; font-size:13px; }
-      @media (max-width:600px) { .toolbar { padding-inline:15px; }.toolbar a,.toolbar button { font-size:11px; }.job-head { display:block; }.job-head span { display:inline-block; margin-top:5px; }.grid,.metric-grid { grid-template-columns:1fr; } }
-      @media print { .toolbar { display:none; } body { background:#fff; }.page { width:100%; margin:0; padding:0; box-shadow:none; } section { break-inside:avoid; } }
-    </style>
-  </head>
-  <body>
-    <div class="toolbar"><a href="index.html">← Volver al portafolio</a><button type="button" onclick="window.print()">Guardar como PDF</button></div>
-    <main class="page">
-      <header>
-        <p class="eyebrow">Currículum profesional</p>
-        <h1>Aline Peña</h1>
-        <p class="title">PHP Developer · WordPress/Web Developer · Front-End · UX/UI · Integraciones</p>
-        <div class="meta"><span>Ingeniera en Sistemas Computacionales</span><span>Instituto Tecnológico Superior de Alvarado · ago. 2016 – feb. 2021</span><span>Veracruz, México</span><span>Remoto México/LATAM · híbrido/presencial en Veracruz</span><span>Disponibilidad inmediata</span><span>alinepc1998@gmail.com</span><span>GitHub: github.com/AlinePC9128</span></div>
-      </header>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="CV de Aline Peña Colunga, Ingeniera en Sistemas. Growth & Acquisition, paid media, analítica, CRO, SEO, WordPress, CRM y automatización."><title>CV — Aline Peña Colunga</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="cv.css"><script src="cv.js" defer></script></head>
+<body><div class="cv-toolbar"><a href="index.html">← Volver al portafolio</a><button type="button" id="print-cv">Imprimir / guardar como PDF</button></div>
+<main class="cv-page"><header><span class="cv-label">CURRÍCULUM PROFESIONAL</span><h1>Aline Peña Colunga</h1><p class="cv-role">Growth & Acquisition · Paid Media · Web · Analítica · CRM</p><p class="cv-contact">Veracruz, Veracruz, México · <a href="mailto:alinepc1998@gmail.com">alinepc1998@gmail.com</a></p><p class="cv-contact"><a href="https://alinepc9128.github.io/portafolio-de-trabajo/">alinepc9128.github.io/portafolio-de-trabajo</a> · <a href="https://github.com/AlinePC9128">GitHub: AlinePC9128</a></p></header>
+<section><h2>Perfil profesional</h2><p>Ingeniera en Sistemas Computacionales con 5 años de experiencia combinando marketing digital, adquisición, desarrollo web, SEO, analítica, CRM y automatización. He gestionado campañas en Google Ads, Meta Ads y TikTok Ads; desarrollado sitios y landing pages; implementado medición con GA4, Google Tag Manager y Search Console; y conectado formularios con CRM, correo y WhatsApp mediante Zapier y webhooks. Mi perfil combina análisis, ejecución y criterio técnico para convertir datos en acciones concretas sobre campañas, contenido, landings y funnel.</p></section>
+<section><h2>Resultados y alcance de mi trabajo</h2><p>Apoyo al seguimiento de aproximadamente 200 leads mensuales mediante campañas, landing pages, formularios y CRM. Implementación de 31 integraciones entre formularios, CRM, correo, WhatsApp, Mailchimp y Tidio mediante Zapier y webhooks. Desarrollo de 3 sitios web y 4 landing pages orientadas a captación, conversión, SEO, velocidad y experiencia responsive. Administración de WooCommerce con más de 200 productos, categorías, contenidos y experiencia de compra.</p></section>
+<section><h2>Experiencia profesional</h2>
+<article class="cv-job"><div class="cv-job-heading"><h3>Intersyst Seguridad y Control S.A. de C.V.</h3><span>Abr. 2023 – May. 2026</span></div><p class="cv-job-role">Growth Marketing, Web, SEO & CRM</p><p>Planifiqué y ejecuté campañas en Google Ads, Meta Ads y TikTok Ads, coordinando audiencias, mensajes, creativos y páginas de destino. Desarrollé y optimicé sitios y landing pages en WordPress/Elementor, trabajando estructura, copy, llamadas a la acción, formularios, SEO, velocidad y experiencia móvil. Utilicé GA4, GTM y Search Console para analizar tráfico, comportamiento y conversiones y proponer mejoras basadas en datos.</p><p>Implementé Perfex CRM para mejorar la trazabilidad de aproximadamente 200 leads mensuales, responsables, actividades, fuentes y estatus. Integré 31 formularios con CRM, correo, WhatsApp, Mailchimp y Tidio mediante Zapier y webhooks. Realicé pruebas y ajustes sobre formularios, mensajes, páginas y componentes para reducir fricción y mejorar claridad de conversión. Generé reportes con Excel y Power BI para dar seguimiento a campañas, leads y desempeño digital.</p></article>
+<article class="cv-job"><div class="cv-job-heading"><h3>DBC Empresarial S.A. de C.V.</h3><span>Feb. 2021 – Abr. 2022</span></div><p class="cv-job-role">Marketing Digital, Web Support & Data</p><p>Apoyé actividades de marketing digital, mantenimiento de WordPress, email marketing, contenido y soporte de plataformas. Participé en análisis de requerimientos, pruebas funcionales, documentación y capacitación de usuarios.</p></article></section>
+<section><h2>Competencias aplicadas</h2><div class="cv-skills"><p><strong>Adquisición:</strong> Google Ads, Meta Ads y TikTok Ads; configuración, seguimiento y optimización de audiencias, anuncios y objetivos.</p><p><strong>Analítica:</strong> GA4 (Google Analytics 4), GTM (Google Tag Manager), Search Console, eventos, etiquetas, parámetros UTM y revisión del comportamiento digital.</p><p><strong>CRO (optimización de la tasa de conversión):</strong> landings, formularios, CTA (llamadas a la acción), jerarquía, fricción y experiencia móvil; hipótesis y comparación antes/después.</p><p><strong>SEO y CMS:</strong> SEO técnico y on-page, arquitectura, contenidos, enlaces internos, velocidad y Core Web Vitals. WordPress, Gutenberg, Elementor Pro y WooCommerce.</p><p><strong>CRM y automatización:</strong> Perfex CRM, fuentes, estados, responsables, Zapier, webhooks, Mailchimp, email y WhatsApp.</p><p><strong>BI y reporting:</strong> Excel avanzado y Power BI. Familiaridad con Looker Studio para dashboards y visualización.</p></div></section>
+<section><h2>Herramientas y base técnica</h2><p>HTML5 · CSS3 · JavaScript · PHP · MySQL · GitHub · Figma · Photoshop · Illustrator · Canva. Uso de ChatGPT, Claude, Gemini y Copilot para investigación, análisis de keywords, hipótesis, variantes de copy, documentación y estructuración de landings, validando resultados y decisiones con datos.</p></section>
+<section><h2>Proyectos de portafolio</h2><p><strong>Marketing Growth Lab:</strong> análisis de campañas, costo por oportunidad, UTMs, plan de medición y experimentos de conversión con datos ficticios. <strong>CRM Webhook Orchestrator:</strong> flujo demostrativo de validación y mapeo entre captación y CRM. <strong>WordPress/WooCommerce Performance Kit:</strong> proyecto de optimización y diagnóstico técnico. <strong>UX Service Blueprint:</strong> experiencia, procesos y puntos de contacto. Los proyectos Angular/TypeScript y Node.js son casos de práctica técnica.</p><p><a href="index.html#casos">Explorar trabajo publicado</a> · <a href="projects/marketing-growth-lab/index.html">Probar Growth Lab</a> · <a href="labs/index.html">Abrir laboratorio técnico</a></p></section>
+<section><h2>Formación e idiomas</h2><p><strong>Ingeniería en Sistemas Computacionales.</strong> Instituto Tecnológico Superior de Alvarado, 2016–2021. Título y cédula profesional.</p><p>Español nativo. Inglés intermedio: lectura y escritura sólidas; conversación en mejora continua. Trabajo remoto desde México.</p></section>
+</main></body></html>
 
-      <section>
-        <h2>Perfil</h2>
-        <p>Ingeniera en Sistemas con 5 años de experiencia en desarrollo web aplicado. Trabajo con PHP, JavaScript/jQuery, MySQL, HTML5, CSS3 y Figma para diseñar, construir, mantener y optimizar experiencias digitales. Integro UX/UI, APIs, CRM, automatización, SEO y marketing; WordPress y WooCommerce son parte de mi experiencia práctica, no el límite de mi perfil. También realizo diagnóstico de incidencias, pruebas funcionales, documentación y soporte técnico web.</p>
-        <div class="metric-grid"><div class="metric"><strong>5 años</strong><span>desarrollo web y proyectos digitales</span></div><div class="metric"><strong>3 + 4</strong><span>sitios y landing pages desarrollados</span></div><div class="metric"><strong>200+</strong><span>productos administrados en WooCommerce</span></div><div class="metric"><strong>31</strong><span>formularios conectados a canales comerciales</span></div><div class="metric"><strong>~200</strong><span>leads mensuales en operación de marketing</span></div><div class="metric"><strong>15K</strong><span>contactos gestionados en email marketing</span></div><div class="metric"><strong>25%</strong><span>apertura aproximada de campañas de email</span></div><div class="metric"><strong>90/85</strong><span>resultados de rendimiento PageSpeed reportados</span></div></div>
-      </section>
-
-      <section>
-        <h2>Experiencia relevante</h2>
-        <article class="job"><div class="job-head"><div><h3>Intersyst Seguridad y Control</h3><p>Especialista en marketing y programadora web</p></div><span>Experiencia actual / reciente</span></div><ul><li>Desarrollo y mantenimiento de 3 sitios y 4 landing pages con PHP, HTML5, CSS3, JavaScript/jQuery, WordPress y Elementor.</li><li>Administración de catálogo WooCommerce de más de 200 productos, formularios, contenido corporativo y experiencias responsive.</li><li>Diagnóstico y resolución de incidencias en CMS, frontend, formularios e integraciones; pruebas funcionales, documentación y soporte técnico web.</li><li>Optimización SEO técnica y de contenido, rendimiento web, GA4, Google Tag Manager y Search Console.</li><li>Creación y conexión de 31 formularios con CRM, correo, WhatsApp, Mailchimp, Tidio, Zapier y webhooks.</li><li>Gestión de hasta 5 campañas simultáneas, aproximadamente 200 leads mensuales, email marketing para una base cercana a 15,000 contactos y hasta 5 campañas mensuales de Mailchimp.</li><li>Video, reportes, coordinación con ventas, documentación, procesos, indicadores y responsabilidad de calidad ISO 9001.</li></ul></article>
-        <article class="job"><div class="job-head"><div><h3>Proyectos de desarrollo e integración</h3><p>PHP · MySQL · Perfex CRM · Clientes_SAE · AUTOSISE</p></div><span>Casos seleccionados</span></div><ul><li>Personalización de módulo CRM y flujo de leads mediante HTTP/POST, JSON, validación, webhooks, Zapier e idempotencia.</li><li>Diseño de arquitectura de información, user flows, wireframes y prototipos responsive en Figma.</li><li>Construcción de catálogos y experiencias de showroom para productos tecnológicos con enfoque mobile-first.</li><li>Integración entre campañas, formularios, CRM y equipos comerciales para mejorar la trazabilidad de oportunidades.</li></ul></article>
-      </section>
-
-      <section class="grid">
-        <div><h2>Stack profesional</h2><div class="stack-group"><h3>Desarrollo web</h3><p>PHP · JavaScript/jQuery · HTML5 · CSS3 · MySQL · Git · FTP · cPanel</p></div><div class="stack-group"><h3>UX/UI y producto</h3><p>Figma · arquitectura de información · user flows · wireframes · prototipos · responsive · accesibilidad · pruebas de usabilidad</p></div><div class="stack-group"><h3>CMS y comercio</h3><p>WordPress · Elementor · WPBakery · WooCommerce · Contact Form 7 · SEO técnico · mantenimiento web</p></div><div class="stack-group"><h3>Datos e integraciones</h3><p>REST · HTTP/POST · JSON · webhooks · Zapier · Perfex CRM · formularios · chatbots · validación de datos</p></div><div class="stack-group"><h3>Marketing y medición</h3><p>GA4 · Google Tag Manager · Search Console · Meta Ads · Google Ads · TikTok Ads · Mailchimp · Power BI · SEO · social media · contenidos · community management · edición de video</p></div><div class="stack-group"><h3>Soporte y calidad</h3><p>Diagnóstico de incidencias · pruebas funcionales · documentación técnica · seguimiento de requerimientos · procesos · indicadores · ISO 9001</p></div></div>
-        <div><h2>Demos técnicas y actualización</h2><ul><li>Angular, TypeScript, Signals y RxJS</li><li>Node.js, REST, OpenAPI y validación de contratos</li><li>Arquitectura de APIs, paginación e idempotencia</li><li>Gutenberg y Full Site Editing</li><li>React y consumo de REST APIs</li><li>WP-CLI, GitHub Actions y CI/CD</li></ul><p class="honest">Estas tecnologías están demostradas mediante casos de portafolio y formación práctica. Se presentan como proyectos técnicos en actualización, no como experiencia comercial avanzada.</p></div>
-      </section>
-
-      <section class="grid"><div><h2>Idiomas</h2><p><strong>Español:</strong> nativo.</p><p><strong>Inglés:</strong> intermedio para lectura y escritura técnica; en preparación hacia nivel profesional avanzado.</p></div><div><h2>Perfiles objetivo</h2><p>Mid-Senior WordPress Developer · Web Developer · Front-End Developer · UX/UI Designer · WordPress Support Developer · Digital Marketing.</p></div></section>
-
-      <section><h2>Proyectos demostrativos</h2><ul><li><strong>Angular UX Command Center:</strong> dashboard de leads con TypeScript, Signals, RxJS, filtros, formularios y estados de interfaz.</li><li><strong>API Contract Studio:</strong> API-first con Node.js/TypeScript, REST, OpenAPI, validación, paginación e idempotencia.</li><li><strong>CRM Webhook Orchestrator:</strong> pipeline PHP/MySQL para mapear payloads, validar datos, registrar auditoría y aplicar reintentos.</li><li><strong>WordPress/WooCommerce Performance Kit:</strong> plugin PHP con hooks, shortcode y endpoint REST de diagnóstico.</li><li><strong>UX Service Blueprint:</strong> investigación, hipótesis, user flows, validación y diseño de interfaces en Figma.</li><li><strong>Marketing Growth Lab:</strong> funnel, UTM builder, SEO, analítica, experimentos y lectura de canales.</li></ul></section>
-
-      <section><h2>Fortalezas</h2><ul class="chips"><li>Resolución de problemas</li><li>Comunicación</li><li>Organización</li><li>Aprendizaje continuo</li><li>Trabajo colaborativo</li><li>Orientación a resultados</li></ul></section>
-      <section><h2>Contacto</h2><p>Email: <a href="mailto:alinepc1998@gmail.com">alinepc1998@gmail.com</a></p><p>GitHub: <a href="https://github.com/AlinePC9128/portafolio-de-trabajo">github.com/AlinePC9128/portafolio-de-trabajo</a></p></section>
-    </main>
-  </body>
-</html>
