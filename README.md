@@ -1,6 +1,6 @@
 # Aline Peña — Growth, web y datos
 
-[Ver portafolio](https://alinepc9128.github.io/portafolio-de-trabajo/) · [Probar Growth Lab](https://alinepc9128.github.io/portafolio-de-trabajo/projects/marketing-growth-lab/) · [Ver CV](https://alinepc9128.github.io/portafolio-de-trabajo/cv.html)
+[Ver portafolio](https://alinepc9128.github.io/portafolio-de-trabajo/) · [Probar Growth Lab](https://alinepc9128.github.io/portafolio-de-trabajo/projects/marketing-growth-lab/) · [CV en versión web](https://alinepc9128.github.io/portafolio-de-trabajo/cv.html) · [Descargar CV original](https://alinepc9128.github.io/portafolio-de-trabajo/assets/Aline-Pena-Colunga-CV.pdf)
 
 Portafolio de Aline Peña Colunga, Ingeniera en Sistemas Computacionales con experiencia en adquisición, paid media, desarrollo web, SEO, analítica, CRM y automatización. La presentación conecta el trabajo publicado con el aporte profesional y con demostraciones navegables.
 
@@ -8,7 +8,9 @@ Portafolio de Aline Peña Colunga, Ingeniera en Sistemas Computacionales con exp
 
 La portada presenta Intersyst, las landings Comunicador de Alarma Universal y Cámara de Interior, automatización con Perfex CRM/Zapier/webhooks y AUTOSISE. Cada caso explica el objetivo, mi aporte y lo que permite revisar el enlace público.
 
-El alcance profesional procede del CV aportado por Aline: aproximadamente 200 leads al mes en seguimiento, 31 integraciones, 3 sitios y 4 landing pages, y más de 200 productos administrados en WooCommerce. Estas cifras describen responsabilidades; el portafolio no las convierte en tasas de crecimiento o ventas inventadas.
+La sección de implementación desarrolla tres áreas de experiencia: mejoras de estructura, contenido, formularios, SEO y catálogo; campañas ejecutadas en Google Ads, Meta Ads y TikTok Ads; y automatizaciones de captación, integración, CRM y comunicación. Incluye navegación directa, herramientas, criterios de seguimiento y enlaces a sitios publicados y demos.
+
+El alcance profesional procede del CV actualizado aportado por Aline (octubre de 2026): aproximadamente 200 leads al mes en seguimiento, 31 integraciones, 3 sitios y 4 landing pages, y más de 200 productos administrados en WooCommerce. Estas cifras describen responsabilidades; el portafolio no las convierte en tasas de crecimiento o ventas inventadas.
 
 ## Qué puedes probar
 
@@ -22,12 +24,13 @@ Los datos de Growth Lab son ficticios. La inversión se expresa en MXN en todos 
 
 ## Habilidades y niveles
 
-Google Ads, Meta Ads, TikTok Ads, GA4, GTM, Search Console, WordPress, Elementor, WooCommerce, Perfex CRM, Zapier, Mailchimp, Excel y Power BI se presentan conforme al CV. Looker Studio se describe como familiaridad. Angular/TypeScript y Node.js permanecen como práctica técnica.
+Google Ads, Meta Ads, TikTok Ads, GA4, GTM, Search Console, WordPress, Elementor, WooCommerce, Perfex CRM, Zapier, Mailchimp, Excel y Power BI se presentan conforme al CV. Looker Studio se describe como nivel principiante. Angular/TypeScript y Node.js permanecen como práctica técnica.
 
 ## Estructura
 
 - index.html, styles.css, script.js: portada, casos, habilidades y navegación.
-- cv.html, cv.css, cv.js: CV alineado con el archivo aportado; imprimir o guardar como PDF desde el navegador.
+- cv.html, cv.css, cv.js: versión de lectura del CV actualizado, con descarga del PDF original e impresión de la versión web.
+- assets/Aline-Pena-Colunga-CV.pdf: archivo PDF recibido de Aline, conservado sin modificaciones.
 - projects/marketing-growth-lab/: laboratorio con core.js (cálculos), app.js (interfaz), README y pruebas.
 - projects/: demostraciones existentes de CRM, WordPress, UX, Angular y API.
 - labs/: laboratorio técnico existente.
