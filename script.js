@@ -21,9 +21,9 @@
     }
   });
   const stages = {
-    acquisition: { label: "01 / ADQUISICIÓN", title: "Un mensaje para cada intención.", copy: "Trabajo audiencias, búsquedas, anuncios y páginas de destino en Google Ads, Meta Ads y TikTok Ads. La siguiente decisión depende del comportamiento y de la calidad del lead.", tools: ["Google Ads", "Meta Ads", "TikTok Ads"] },
-    conversion: { label: "02 / CONVERSIÓN", title: "Una experiencia que facilita el siguiente paso.", copy: "Trabajo propuesta de valor, jerarquía, CTA y formularios en WordPress. Reviso eventos y conversiones con GA4 y GTM para entender en qué parte del recorrido aparece la fricción.", tools: ["WordPress", "GA4 + GTM", "CRO + UX"] },
-    followup: { label: "03 / SEGUIMIENTO", title: "Que cada solicitud llegue con contexto.", copy: "Conecto formularios con CRM, correo y WhatsApp mediante Zapier y webhooks. Fuentes, estados, responsables y actividades ayudan al equipo comercial a continuar la conversación.", tools: ["Perfex CRM", "Zapier", "Webhooks"] }
+    acquisition: { label: "ADQUISICIÓN", title: "Un mensaje para cada intención.", copy: "Trabajo audiencias, búsquedas, anuncios y páginas de destino en Google Ads, Meta Ads y TikTok Ads. La siguiente decisión depende del comportamiento y de la calidad del lead.", tools: ["Google Ads", "Meta Ads", "TikTok Ads"] },
+    conversion: { label: "CONVERSIÓN", title: "Una experiencia que facilita el siguiente paso.", copy: "Trabajo propuesta de valor, jerarquía, CTA y formularios en WordPress. Reviso eventos y conversiones con GA4 y GTM para entender en qué parte del recorrido aparece la fricción.", tools: ["WordPress", "GA4 + GTM", "CRO + UX"] },
+    followup: { label: "SEGUIMIENTO", title: "Que cada solicitud llegue con contexto.", copy: "Conecto formularios con CRM, correo y WhatsApp mediante Zapier y webhooks. Fuentes, estados, responsables y actividades ayudan al equipo comercial a continuar la conversación.", tools: ["Perfex CRM", "Zapier", "Webhooks"] }
   };
   document.querySelectorAll("[data-stage]").forEach(button => {
     button.addEventListener("click", () => {
